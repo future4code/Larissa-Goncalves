@@ -62,6 +62,11 @@ function imprimeInformacoesUsuario(nome, idade, email) {
 
 // EXERCÍCIO 05
 function imprimeTresCoresFavoritas() {
+  const cor1 = prompt("digite a primeira cor:")
+  const cor2 = prompt("digite a segunda cor:")
+  const cor3 = prompt("digite a segunda cor:")
+  const resultado = [cor1, cor2, cor3]
+  console. log(resultado)
   // implemente sua lógica aqui
 
 }
@@ -69,11 +74,17 @@ function imprimeTresCoresFavoritas() {
 // EXERCÍCIO 06
 function retornaStringEmMaiuscula(string) {
   // implemente sua lógica aqui
+  var texto = "oi".toUpperCase()
+  return(texto)
 
 }
 
 // EXERCÍCIO 07
 function calculaIngressosEspetaculo(custo, valorIngresso) {
+  const a =Number(3000) / Number(100)
+  const b =Number(5500) / Number(50)
+  const resultado = (a, b)
+  return (resultado)
   // implemente sua lógica aqui
 
 }
