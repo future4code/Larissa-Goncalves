@@ -114,34 +114,34 @@ function retornaTamanhoArray(array) {
      return anonimo
  }
 //  // EXERCÍCIO 13A
-//  function retornaPessoasAutorizadas(pessoas) {
-//      const autorizados = [
-//      { nome: "Paula", idade: 12, altura: 1.8},
-//      { nome: "João", idade: 20, altura: 1.3},
-//      { nome: "Pedro", idade: 15, altura: 1.9},
-//      { nome: "Luciano", idade: 22, altura: 1.8},
-//      { nome: "Artur", idade: 10, altura: 1.2},
-//      { nome: "Soter", idade: 70, altura: 1.9}
-//     ]
+ function retornaPessoasAutorizadas(pessoas) {
+     const autorizados = [
+     { nome: "Paula", idade: 12, altura: 1.8},
+     { nome: "João", idade: 20, altura: 1.3},
+     { nome: "Pedro", idade: 15, altura: 1.9},
+     { nome: "Luciano", idade: 22, altura: 1.8},
+     { nome: "Artur", idade: 10, altura: 1.2},
+     { nome: "Soter", idade: 70, altura: 1.9}
+    ]
      
  
  
 //  // EXERCÍCIO 13B
-//  function retornaPessoasNaoAutorizadas(pessoas) {
+ function retornaPessoasNaoAutorizadas(pessoas) {
    
-//  }
+ }
  
 //  // EXERCÍCIO 14
-//  function retornaContasComSaldoAtualizado(contas) {
+ function retornaContasComSaldoAtualizado(contas) {
  
-//  }
+ }
  
 // //  // EXERCÍCIO 15A
-//  function retornaArrayOrdenadoAlfabeticamente(consultas) {
+ function retornaArrayOrdenadoAlfabeticamente(consultas) {
    
-//  }
+ }
  
 // //  // EXERCÍCIO 15B
-//  function retornaArrayOrdenadoPorData(consultas) {
+ function retornaArrayOrdenadoPorData(consultas) {
 
-// }
+}
