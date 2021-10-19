@@ -100,19 +100,19 @@ function retornaTamanhoArray(array) {
  }
  
 // //  // EXERCÍCIO 12
-//  function retornaPessoaAnonimizada(pessoa) {
-//      const infosDaPessoa= {
-//      nome: "Astrodev",
-//      idade: 25,
-//      email: "astrodev@labenu.com.br",
-//      endereco:"Rua do Futuro, 4"
-//      }
-//      const anonimo = {
-//      ...pessoa,
-//      nome: "ANÔNIMO"
-//      }
-//      return anonimo
-//  }
+ function retornaPessoaAnonimizada(pessoa) {
+     const infosDaPessoa= {
+     nome: "Astrodev",
+     idade: 25,
+     email: "astrodev@labenu.com.br",
+     endereco:"Rua do Futuro, 4"
+     }
+     const anonimo = {
+     ...pessoa,
+     nome: "ANÔNIMO"
+     }
+     return anonimo
+ }
 //  // EXERCÍCIO 13A
 //  function retornaPessoasAutorizadas(pessoas) {
 //      const autorizados = [
