@@ -39,16 +39,16 @@ function retornaTamanhoArray(array) {
  }
  
 //  // EXERCÍCIO 06
-//  function retornaMaiorNumero(array) {
-//    const numeroMaior = [1, 5, 3, 7, 5, 2,]
-//    let maiorNum = -Infinity
-//    for(let i = 0; i < numeroMaior.length; i++){
-//        if(numeroMaior[i] > maiorNum){
-//            maiorNum = numeroMaior[i]
-//        }
-//    }
-//    return maior
-//  }
+ function retornaMaiorNumero(array) {
+   const numeroMaior = [1, 5, 3, 7, 5, 2,]
+   let maiorNum = -Infinity
+   for(let i = 0; i < numeroMaior.length; i++){
+       if(numeroMaior[i] > maiorNum){
+           maiorNum = numeroMaior[i]
+       }
+   }
+   return maior
+ }
  
 //  // EXERCÍCIO 07
 //  function retornaObjetoEntreDoisNumeros(num1, num2) {
