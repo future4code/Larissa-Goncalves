@@ -51,19 +51,19 @@ function retornaTamanhoArray(array) {
  }
  
 //  // EXERCÍCIO 07
-//  function retornaObjetoEntreDoisNumeros(num1, num2) {
+ function retornaObjetoEntreDoisNumeros(num1, num2) {
      
-//  const a = 15
-//  const b = 30
+ const a = 15
+ const b = 30
  
-//  const resultado = {
-//      maiorNumero: 30,
-//      maiorDivisivelPorMenor:true,
-//      diferenca: 15,
-//  }
-//      return resultado
+ const resultado = {
+     maiorNumero: 30,
+     maiorDivisivelPorMenor:true,
+     diferenca: 15,
+ }
+     return resultado
  
-//  }
+ }
  
 //  // EXERCÍCIO 08
 //  function retornaNPrimeirosPares(n) {
@@ -71,16 +71,16 @@ function retornaTamanhoArray(array) {
 //  }
  
 // //  // EXERCÍCIO 09
-//  function classificaTriangulo(ladoA, ladoB, ladoC) {
-//      if(ladoA !== ladoB && ladoB !== ladoC && ladoA !== ladoC){
-//          return("Escaleno")   
-//      }else if(ladoA === ladoB && ladoB === ladoC && ladoA === ladoC ){
-//         return("Equilátero")
-//      }else{
-//          (ladoA === ladoB || ladoB === ladoC || ladoA === ladoC)
-//          return("Isósceles")
-//      }
-//  }
+ function classificaTriangulo(ladoA, ladoB, ladoC) {
+     if(ladoA !== ladoB && ladoB !== ladoC && ladoA !== ladoC){
+         return("Escaleno")   
+     }else if(ladoA === ladoB && ladoB === ladoC && ladoA === ladoC ){
+        return("Equilátero")
+     }else{
+         (ladoA === ladoB || ladoB === ladoC || ladoA === ladoC)
+         return("Isósceles")
+     }
+ }
 //  // EXERCÍCIO 10
 //  function retornaSegundoMaiorESegundoMenor(array) {
    
