@@ -9,20 +9,20 @@ function retornaTamanhoArray(array) {
     return array.length
  }
 //  // EXERCÍCIO 02
-//  function retornaArrayInvertido(array) {
-//      const invertido = [1,2,3,4,5]
-//      return array.reverse()
-//  }
+ function retornaArrayInvertido(array) {
+     const invertido = [1,2,3,4,5]
+     return array.reverse()
+ }
  
 //  // EXERCÍCIO 03
-//  function retornaArrayOrdenado(array) {
-//     let crescente = [36,12,56,7,3]
-//     return crescente.sort(crescente)
+ function retornaArrayOrdenado(array) {
+    let crescente = [36,12,56,7,3]
+    return crescente.sort(crescente)
  
-//  }
+ }
  
 //  // EXERCÍCIO 04
-//  function retornaNumerosPares(array) {
+ function retornaNumerosPares(array) {
   
    
 //  }
