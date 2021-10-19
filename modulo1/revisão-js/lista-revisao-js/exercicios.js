@@ -28,15 +28,15 @@ function retornaTamanhoArray(array) {
 //  }
  
 // //  // EXERCÍCIO 05
-//  function retornaNumerosParesElevadosADois(array) {
-//      var numeros = [1, 2, 3, 4, 5, 6]
+ function retornaNumerosParesElevadosADois(array) {
+     var numeros = [1, 2, 3, 4, 5, 6]
  
-//      if(array % 2 === 0 ){
-//          return array
-//      }
-//      var numerosPares = numeros.filter(retornaNumerosParesElevadosADois)
-//      console.log(numerosPares)
-//  }
+     if(array % 2 === 0 ){
+         return array
+     }
+     var numerosPares = numeros.filter(retornaNumerosParesElevadosADois)
+     console.log(numerosPares)
+ }
  
 //  // EXERCÍCIO 06
 //  function retornaMaiorNumero(array) {
