@@ -1,0 +1,42 @@
+.logodaPetLace4{
+    display: flex;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    left: 750px;
+    bottom: 30px;
+}
+
+.comandos{
+    display: flex;
+    position: relative;
+    left: 70%;
+    bottom: 240px;
+}
+
+main h2{
+    display: inline;
+    position: relative;
+    width: 600px;
+    left: 22%;
+    bottom: 80px;
+}
+
+main{
+    background-color: rgb(238, 233, 185);
+    display: flex;
+    position: relative;
+    width: 600px;
+    height: 500px;
+    left: 32%;
+    bottom: 80px;
+    border-radius: 40px;
+}
+
+main form{
+    position: relative;
+    display: inline;
+    top: 100px;
+    right: 190px;
+    font-size: 25px;
+}
