@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.menu{
+    background-color: black;
+    width: 100%;
+    height:100px;
+}
+
+.button1{
+    display: inline;
+    position:relative;
+    left: 27%;
+    top: 30%;
+}
+
+.button2{
+    display:inline;
+    position:relative;
+    left: 33%;
+    top: 30%;
+
+}
+
+.button3{
+    display:inline;
+    position:relative;
+    left: 38%;
+    top: 30%;
+    text-decoration: none;
+
+}
+
+#home{
+    display: inline;
+    border: none;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+}
+
+#sobre{
+    display: inline;
+    border: none;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50px;
+
+}
+
+#projeto{
+    display: inline;
+    border: 10px;
+    border-color: white;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    
+
+}
+
+.imagem{
+    position: relative;
+    display: flex;
+    width: 800px;
+    
+}
