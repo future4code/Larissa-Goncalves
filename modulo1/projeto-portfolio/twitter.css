@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#logotwitter{
+    position: relative;
+    display: flex;
+    width: 200px;
+    height: 200px;
+    bottom: 20px;
+}
+
+#setaesquerda img{
+    position: relative;
+    display: flex;
+    height: 60px;
+}
+
+#setaesquerda{
+    display: flex;
+    position: relative;
+    left: 20px;
+    top: 200px;
+}
+
+#setadireita img{
+    position: relative;
+    display: flex;
+    height: 60px;
+}
+
+#setadireita{
+    display: flex;
+    position: relative;
+    top: 140px;
+    left: 95%;
+}
+
+#bloco1 img{
+    display: flex;
+    position: relative;
+    height: 300px;
+    width: 600px;
+    border: solid black 1px;
+    bottom: 320px;
+    border-radius: 10px;
+    left: 60%;
+}
+
+#bloco2 img{
+    display: flex;
+    position: relative;
+    height: 300px;
+    width: 600px;
+    border: solid black 1px;
+    bottom: 310px;
+    border-radius: 10px;
+    left: 60%;
+}
+
+#bloco3 img{
+    display: flex;
+    position: relative;
+    height: 300px;
+    width: 600px;
+    border: solid black 1px;
+    bottom: 300px;
+    border-radius: 10px;
+    left: 60%;
+}
+
+.descricao h1{
+    color: rgb(124, 157, 184);
+    display: flex;
+    position: relative;
+    bottom: 1160px;
+    left: 440px;
+    font-size: 40px;
+    font-style:oblique;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.descricao h1:hover{color: rgb(42, 103, 196);}
+
+.descricao p{
+    display: flex;
+    position: relative;
+    bottom: 1100px;
+    left: 300px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.descricao h2{
+    display: flex;
+    position: relative;
+    bottom: 1000px;
+    left: 450px;
+    font-size: 30px;
+    color: rgb(136, 146, 172);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.descricao h2:hover{color:rgb(42, 103, 196);}
+
+.lista ul{
+    display: inline;
+    position: relative;
+    bottom: 980px;
+    left: 470px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

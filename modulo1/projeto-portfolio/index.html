@@ -4,31 +4,128 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Portfólio Larissa Lanes</title>
 </head>
-
-  <body>
-    <header>
-        <div class="menu">
-        <div class="button1">
-            <a href="./home.html"><button id="home">HOME</button></a>
-        </div>
-        <div class="button2">
-            <a href="./sobremim.html"><button id="sobre">SOBRE MIM</button></a>
-        </div>
-        <div class="button3">
-            <a href="./projetos.html"><button id="projeto">MEUS PROJETOS</button></a>
-        </div>
-
-        </div>
+<body>
+    <header id="header">
+        <ul>
+            <li id="homeheader"><a href="#home">HOME</a></li>
+            <li id="habilheader"><a href="#habilidades">HABILIDADES</a></li>
+            <li id="ensinoheader"><a href="#ensino">ENSINO</a></li>
+            <li id="projetosheader"><a href="#projetos">PROJETOS</a></li>
+            <li id="contatosheader"><a href="#contatos">CONTATOS</a></li>
+        </ul>
     </header>
     <main>
-        <img class="imagem" src="." alt="imagem">
-    </main>
-
-  </body>
-
-  
-  
+        <div class="paginahome" id="home">
+            <h1 class="bemvindo">Bem vindo ao meu portfólio.</h1>
+            <h2 class="dev">Web Developer</h2>
+            <h3 class="Port">Larissa Lanes</h3>
+           <img class="imagemdeperfil" src="./img/perfil.jpeg" alt="foto de perfil">
+        <div class="paginahabilidades" id="habilidades">
+            <div class="soft">
+                <p class="texto">Olá!
+                    <br>
+                    Eu sou a Larissa, e esse é meu portfólio web Developer.
+                    <br>
+                    Me formei no ensino médio técnico curso normal(Formação de professores)porém nunca atuei.
+                    Sempre desenhei, e em 2020 profissionalizei isso em minha vida e trabalhei com letterring em parede
+                    tirando o desenho do cenário do hobby.
+                    Fui aluna fa UFRRJ-rj, no curso de filosofia, porém percebi que o magistério não era mais meu objetivo 
+                    assim me tornei aluna do curso Web Full-Stack da escola de programaçõa Labenu. 
+                    e me vejo sendo Dev pelos próximos anos.
+                    Com Persistência e dedicação,vocẽ pode chegar onde deseja.
+                    <br>
+                    Conheça um pouco mais sobre mim e meus projetos usando o menu de navegação.
+                </p>
+            </div>
+            <div class="hard">
+                <div id="linhavertical"></div>
+                <h2 id="hardskills">Hards Skills</h2>
+                <ul id="listahard">
+                    <li>FRONT-END</li>
+                    <br>
+                    <li>HTML</li>
+                    <br>
+                    <li>CSS</li>
+                    <br>
+                    <li>Java-scrip</li>
+                    <br>
+                    <li>BACK-AND</li>
+                    <br>
+                    <li>Java-scrip</li>
+                </ul>
+                <h2 id="softskills">Soft Skills</h2>
+                <ul id="listasoft">
+                    <li>Proatividade;</li>
+                    <br>
+                    <li>Persistência;</li>
+                    <br>
+                    <li>Criatividade;</li>
+                    <br>
+                    <li>Empatia;</li>
+                </ul>
+            </div>
+        </div>
+        <div class="paginaensino" id="ensino">
+            <div class="quadro1"><img src="./img/ufrrj.png" alt="logo ufrrj">
+            </div>
+            <div class="quadro2"><img src="./img/labenupng.jpeg" alt="logo labenu">
+            </div>
+            <div class="quadro3"><img src="./img/iesk.jpeg" alt="logo iesk"></div>
+        </div>
+        <div class="paginaprojetos" id="projetos">
+            <div class="conteiners">
+                <ul class="conteinerul" class="img-responsive"> 
+                    <li class="zoom1"><a href="./petlace.html"><img src="./img/petlace.jpeg" alt="Projeto PetLace"></a></li>
+                    <li class="zoom2"><a href="./spotify.html"><img src="./img/spotify.jpeg" alt="projeto Spotify clone"></a></li>
+                    <li class="zoom3"><a href=""><img src=""alt=""></a></li>
+                </ul>
+            </div>
+            <div class="conteiners2">
+                <ul class="img-responsive">
+                    <li class="zoom4"><a href="./twitter.html"><img src="./img/twitter.jpeg" alt="Projeto Twitter clone"></a></li>
+                    <li class="zoom5"><a href="./nike.html"><img src="./img/nike.jpeg" alt="Projeto Nike clone"></a></li>
+                    <li class="zoom6"><a href=""><img src="./img/branca.jpeg" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="paginacontatos" id="contatos">
+            <h1 class="entreemcontato">CONTATOS</h1>
+            <ul class="redesdociais">
+                <li class="logo1"><a href="https://www.facebook.com/larissa.lanes.16/"><img src="./img/iconfacebook.jpeg" alt="icon facebook"></a></li>
+                <li class="logo2"><a href="https://github.com/LarissaLanes"><img src="./img/icongithub.jpeg" alt="icon github"></a></li>
+                <li class="logo3"><a href="https://www.instagram.com/llanz_l/"><img src="./img/iconinstagram.jpeg" alt="icon instagram"></a></li>
+                <li class="logo4"><a href="https://www.instagram.com/llanzarte/"><img src="./img/iconinstagram.jpeg" alt="icon instagram"></a></li>
+                <li class="logo5"><a href="https://www.linkedin.com/in/larissa-lanes-45b74a1b7/"><img src="./img/iconlinkedin.jpeg" alt="icon linkedin"></a></li>
+                <li class="logo6"><a href="https://twitter.com/lanx_l"><img src="./img/icontwitter.jpeg" alt="icon twitter"></a></li>
+            </ul>
+            <div class="paginametade">
+                <div class="formulario">
+                    <form action="">
+                        <div id="formnome"> 
+                            <label id="nome" for="nome">Nome:</label>
+                            <input type="text" id="nomedousuario" style="width: 300px; height:30px ;" name="nomedousuario">
+                        </div>
+                        <div id="formemail">
+                            <label id="email" for="email">Email:</label>
+                            <input type="email" id="emaildousuario" style="width: 300px; height: 30px;" name="email">
+                        </div>
+                        <div id="formtexto">
+                            <label id="textos" for="texto">Mensagem:</label>
+                            <textarea name = "mensagem" id="areadetexto" style="width: 300px; height: 200px " cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="botaodeenvio">
+                            <button type="submit">ENVIAR EMAIL</button>
+                        </div>
+                    </form>
+                </div>
+             </div>
+             <div class="botaodeinicio">
+                <a href="#header"><button>VOLTAR AO ÍNICIO</button></a>
+            </div>
+        </div>
+    </main>    
+</body>
 </html>
