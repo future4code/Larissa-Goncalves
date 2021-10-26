@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho{
+    height: 100px;
+    border: solid rgb(255, 136, 0) 5px;
+}
+
+main{
+    border: black solid 5px;
+    height: 720px;
+}
+
+.quadros{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+
+}
+
+.quadros img{
+    height: 220px;
+}
+
+.rodape{
+    height: 100px;
+    border: solid rgb(57, 58, 57) 5px;
+}
