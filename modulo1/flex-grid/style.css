@@ -22,8 +22,8 @@
 }
 
 .inconescabecalho button{
-    display: flex;
-    
+    margin: 1600px;
+     
 }
     
 
@@ -50,7 +50,7 @@ nav{
     width: 30px;
 }
 
-.setas{
+/* .setas{
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -61,7 +61,7 @@ nav{
     height: 30px;
     width: 30px;
 
-}
+} */
 
 section{
     flex-grow: 3;
