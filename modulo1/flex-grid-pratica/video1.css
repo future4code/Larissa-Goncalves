@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho1{
+    border: solid 5px red;
+    height: 110px;
+}
+
+section{
+    border: solid black;
+    display: flex;
+    justify-content: center;
+    
+}
+
+section video{
+    margin: 40px;
+    height: 640px;
+
+}
+
+.rodape2{
+    border: solid green;
+    height: 100px;
+}
