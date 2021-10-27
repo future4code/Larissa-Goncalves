@@ -4,8 +4,8 @@
 }
 
 .cabecalho2{
-    background-color: rgb(201, 106, 106);
-    border: solid 5px rgb(201, 106, 106);
+    background-color:  rgb(175, 135, 135);
+    border: solid 5px  rgb(175, 135, 135);
     height: 110px;
 }
 
@@ -31,8 +31,8 @@ section video{
 }
 
 .rodape2{
-    background-color: rgb(201, 106, 106);
-    border: solid rgb(201, 106, 106);
+    background-color:  rgb(175, 135, 135);
+    border: solid  rgb(175, 135, 135);
     height: 100px;
 }
 

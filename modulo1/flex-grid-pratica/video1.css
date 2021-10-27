@@ -4,9 +4,9 @@
 }
 
 .cabecalho1{
-    border: solid 5px rgb(155, 74, 74);
+    border: solid 5px  rgb(175, 135, 135);
     height: 110px;
-    background-color: rgb(155, 74, 74);
+    background-color:  rgb(175, 135, 135);
 }
 
 .cabecalho1 h1{
@@ -31,9 +31,9 @@ section video{
 }
 
 .rodape1{
-    border: solid rgb(155, 74, 74) ;
+    border: solid  rgb(175, 135, 135) ;
     height: 100px;
-    background-color: rgb(155, 74, 74);
+    background-color:  rgb(175, 135, 135);
     
 }
 

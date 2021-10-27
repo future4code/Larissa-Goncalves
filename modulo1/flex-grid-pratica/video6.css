@@ -4,11 +4,13 @@
 }
 
 .cabecalho6{
-    border: solid 5px red;
+    background-color:  rgb(175, 135, 135);
+    border: solid 5px  rgb(175, 135, 135);
     height: 110px;
 }
 
 .cabecalho6 h1{
+    color: white;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -17,7 +19,7 @@
 }
 
 section{
-    border: solid black;
+    border: solid  rgb(175, 135, 135);
     display: flex;
     justify-content: center;
 }
@@ -29,11 +31,13 @@ section video{
 }
 
 .rodape6{
-    border: solid green;
+    background-color:  rgb(175, 135, 135);
+    border: solid  rgb(175, 135, 135);
     height: 100px;
 }
 
 .rodape6 h2{
+    color: white;
     display: flex;
     justify-content: center;
     margin: 40px;
