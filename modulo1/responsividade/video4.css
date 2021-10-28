@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho4{
+    background-color:  rgb(175, 135, 135);
+    border: solid 5px  rgb(175, 135, 135);
+    height: 110px;
+}
+
+.cabecalho4 h1{
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+section{
+    height: 76vh;
+    border: solid  rgb(175, 135, 135);
+    display: flex;
+    justify-content: center;
+}
+
+section video{
+    margin: 10vh;
+    max-height: max-content;
+    border-radius: 20px;
+}
+
+.rodape4{
+    border: solid  rgb(175, 135, 135);
+    position: static;
+    height: 100px;
+    background-color:  rgb(175, 135, 135);
+}
+
+.rodape4 h2{
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
