@@ -1,0 +1,580 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    position: sticky;
+    background: #111111;
+    height: 80px;
+}
+
+ul{
+    display: flex;
+    position: relative;
+    text-decoration: none;
+    justify-content: center;   
+}
+
+li{
+    display: flex;
+    position: relative;
+    margin-right: 90px;
+    top: 30px;
+    font-size: 20px;
+}
+
+a{
+    display: flex;
+    position: relative;
+    text-decoration: none;
+    color: #fafafa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a:hover{color:#9e2d4d;}
+
+a:active{color: #ffe601;}
+
+.paginahome{
+    background-color:#111111;
+    height: 500px;
+    width: 100%;
+}
+
+.paginahabilidades{
+    background-color: #111111;
+    border-top: solid 3px;
+    border-color:#9e2d4d;
+    height: 700px;
+}
+
+.paginaensino{
+    border-top: solid 3px;
+    border-color:#9e2d4d;
+    background-color: white;
+    height: 900px;
+}
+
+.paginaprojetos{
+   background-color: #111111;
+    height: 900px;
+}
+
+.paginacontatos{
+    height: 900px;
+}
+
+.paginametade{
+    display: flex;
+    position: relative;
+    background-color: #9e2d4d;
+    height:700px;
+    top: 19%;
+}
+
+.entreemcontato{
+    display: inline;
+    position: relative;
+    left: 42%;
+    top: 60px;
+    font-size: 35px;
+    color: #111111;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.redesdociais{
+    display: flex;
+    position: relative;
+    top: 100px;
+    left: 60px;
+}
+
+.redesdociais li{
+    display: flex;
+    position: relative;
+    width: 200px;
+    height: 60px;
+}
+
+.redesdociais a{
+    display: flex;
+    position: relative;
+}
+
+.formulario{
+    display: flex;
+    position: relative;
+    left: 740px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#formemail{
+    display: flex;
+    position: relative;
+    top: 100px;
+    right: 30px;
+}
+
+#nomedousuario{
+    display: flex;
+    position: relative;
+    top: 80px;
+    left: 10px;
+    border-radius: 10px;
+}
+
+#areadetexto{
+    display: flex;
+    position: relative;
+    top: 100px;
+    left: 10px;
+    border-radius: 30px;
+}
+
+#emaildousuario{
+    border-radius: 10px;
+}
+#textos{
+    display: flex;
+    position: relative;
+    right: 70px;
+    top: 130px;
+}
+
+#email{
+    display: flex;
+    position: relative;
+    right: 70px;
+    top: 10px;
+    right: 20px;
+}
+
+#nome{
+    display: flex;
+    position: relative;
+    top: 105px;
+    right: 53px;
+}
+
+.botaodeenvio button{
+    background-color: #141614;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+     display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    position: relative;
+    top: 170px;
+    left: 70px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 40px;
+    width: 200px;;
+    border-radius: 10px;
+}
+
+.botaodeinicio a{
+    text-decoration: none;
+}
+
+.botaodeinicio button{
+    position: relative;
+    background-color: #141614;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+     display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    top: 70px;
+    left: 810px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.conteinerul{
+    display: flex;
+    position: relative;
+    text-decoration: none;
+}
+
+.conteiners li{
+    display: flex;
+    position: relative;
+    height: 20px;
+}
+
+.conteiners a{
+    display: flex;
+    position: relative;
+    text-decoration: none; 
+}
+
+.conteiners img{
+    display: flex;
+    position: relative;
+    border: solid black 2px;
+    width: 300px;
+    height: 290px;
+    right: 5%;
+    top: 70px;
+    border-radius: 20px;
+}
+
+.zoom1 img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition:all 0.3s ;
+    transition: all 0.3s;
+}
+
+.zoom1:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.zoom2 img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition:all 0.3s ;
+    transition: all 0.3s;
+}
+
+.zoom2:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.zoom3 img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition:all 0.3s ;
+    transition: all 0.3s;
+}
+
+.zoom3:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.zoom4img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition:all 0.3s ;
+    transition: all 0.3s;
+}
+
+.zoom4:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.zoom5 img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition:all 0.3s ;
+    transition: all 0.3s;
+}
+
+.zoom5:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.zoom6 img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition:all 0.3s ;
+    transition: all 0.3s;
+}
+
+.zoom6:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.conteiners2 ul{
+    display: flex;
+    position: relative;
+    text-decoration: none;
+}
+
+.conteiners2 li{
+    display: flex;
+    position: relative;
+    height: 20px;
+}
+
+.conteiners2 a{
+    display: flex;
+    position: relative;
+    text-decoration: none; 
+}
+
+.conteiners2 img{
+    display: flex;
+    position: relative;
+    border: solid black 2px;
+    width: 300px;
+    height: 290px;
+    right: 5%;
+    top: 400px;
+    border-radius: 20px;
+}
+
+.quadro1{
+    background-color:#fafafa;
+    display: flex;
+    position: relative;
+    width: 500px;
+    height: 500px;
+    left: 200px;
+    top: 21%;
+    border-radius: 20px;
+}
+
+.quadro1:hover{background-color: #141614;}
+
+.quadro2{
+    display: flex;
+    position: relative;
+    background-color: #fafafa;
+    border-radius: 20px;
+    width: 500px;
+    height: 500px;
+    left: 730px;
+    bottom: 309px;
+}
+
+.quadro2:hover{background-color: #141614;}
+
+.quadro3 img{
+    border-radius: 20px;
+    display: flex;
+    position: relative;
+    background-color: #fafafa;
+    width: 500px;
+    height: 500px;
+    left: 1260px;
+    bottom: 810px;
+}
+
+.quadro3:hover{background-color:#141614;}
+
+.soft{
+    background-color: #9e2d4d;
+    border-radius: 40px 0px 40px 0px;
+    position: relative;
+    display:flex;
+    width: 700px;
+    height: 700px;
+    left: 200px;
+}
+
+.hard{
+    position: relative;
+    display:flex;
+    background-color:#9e2d4d;
+    border-radius: 40px 0px 40px 0px;
+    width: 700px;
+    height: 700px;
+    left: 950px;
+    bottom: 700px;
+}
+
+.logo1 img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition:all 0.3s ;
+    transition: all 0.3s;
+}
+
+.logo1:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.logo2 img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition:all 0.3s ;
+    transition: all 0.3s;
+}
+
+.logo2:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.logo3 img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition:all 0.3s ;
+    transition: all 0.3s;
+}
+
+.logo3:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.logo4 img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition:all 0.3s ;
+    transition: all 0.3s;
+}
+
+.logo4:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.logo5 img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition:all 0.3s ;
+    transition: all 0.3s;
+}
+
+.logo5:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.logo6 img{
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition:all 0.3s ;
+    transition: all 0.3s;
+}
+
+.logo6:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.bemvindo{
+    color: #fafafa;
+    display: flex;
+    position: relative;
+    left: 36%;
+    top: 10%;
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bemvindo:hover{color: #741a33;}
+
+.imagemdeperfil{
+    position: relative;
+    display: flex;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    left: 170px;
+    bottom: 100px;
+}
+
+.dev{
+    display: flex;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    color: #fafafa;
+    left: 43%;
+    top: 13%;
+}
+
+.Port{
+    display: flex;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    color: #741a33;
+    font-size: 30px;
+    left: 45%;
+    top: 23%;
+}
+
+.texto{
+    display: inline;
+    position: relative;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fafafa;
+    text-align: center;
+    margin: 20px;
+}
+
+#linhavertical{
+    display: flex;
+    position: relative;
+    height: 600px;
+    border:dashed #f8f8f8 3px;
+    left: 50%;
+    top: 37px;
+}
+
+#hardskills{
+    display: inline;
+    position: relative;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: #fafafa;
+    top: 50px;
+    left: 79px;
+}
+
+#softskills{
+    display: inline;
+    position: relative;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: #fafafa;
+    top: 50px;
+    left: 120px;
+}
+
+#listahard{
+    display: inline;
+    position: relative;
+    color: #fafafa;
+    top: 30%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    right: 90PX;
+}
+
+#listasoft{
+    display: inline;
+    position: relative;
+    color: #f8f8f8;
+    top: 30%;
+    right: 90px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
