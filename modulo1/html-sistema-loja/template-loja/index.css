@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalhobranco{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 360px;
+}
+
+.caminhopaginas{
+    display: flex;
+    position: relative;
+    left: 70%;
+    top: 50px;
+}
+
+.logodalacepet{
+    display: flex;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    left: 750px;
+}
+
+.cabecalhobranco h1{
+    display: flex;
+    position: relative;
+    bottom: 80px;
+    left: 43%;
+    color: rgb(51, 50, 50);
+}
+
+.cabecalhobranco p{
+    display: flex;
+    position: relative;
+    bottom: 60px;
+    left: 39%;
+    
+}
+
+main{
+   background-color: rgb(255, 228, 77);
+    height: 500px;
+    width: 100%;
+    border-radius: 600px
+}
+
+.fotodog {
+    display: flex;
+    position: relative;
+    width: 400px;
+    height: 500px;
+    left: 0;
+    bottom: 0;  
+}
+
+h3{
+    position: relative;
+    display: flex;
+    bottom: 440px;
+    left: 500px;
+}
+
+footer{
+    background-color: rgb(190, 186, 218);
+    height: 300px;
+    border-radius: 0px 700px 700px 0px;
+}
+
+footer p{
+    display: flex;
+    position: relative;
+    top: 130px ;
+    left: 67%;
+}
+
+.icons{
+    position: relative;
+    display: inline;
+    left: 80%;
+    top: 80px;
+    
+}
+
+.logopetlace2{
+    position: relative;
+    display: flex;
+    width: 300px;
+    height: 300px;
+    bottom: 70px;
+
+}

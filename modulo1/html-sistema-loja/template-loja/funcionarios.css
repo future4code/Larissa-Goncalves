@@ -1,0 +1,22 @@
+.logo5{
+    display: flex;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    left:40%;
+    bottom: 50px;
+
+}
+
+header{
+    background-color: aliceblue;
+    width: 100%;
+    height: 180px;
+}
+
+.caminhos2{
+    display: flex;
+    position: relative;
+    left: 70%;
+    bottom: 270px;
+}
