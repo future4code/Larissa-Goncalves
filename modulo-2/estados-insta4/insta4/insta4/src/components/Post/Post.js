@@ -41,17 +41,20 @@ const PostPhoto = styled.img`
 `
 
 class Post extends React.Component {
+     
+
+  
   state = {
     curtido: false,
     numeroCurtidas: 0,
     comentando: false,
-    numeroComentarios: 0
+    numeroComentarios:0,
   }
 
   onClickCurtida = () => {
     var curtidaDoPost
     if(this.state.curtido){
-      curtidaDoPost = this.state.curtido === 0
+      curtidaDoPost = this.state.curtido - 1
     }else{
       curtidaDoPost= this.state.curtido + 1
     }
@@ -96,7 +99,8 @@ class Post extends React.Component {
 
     return <PostContainer>
       <PostHeader>
-        <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
+        <UserPhoto 
+        src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
         <p>{this.props.nomeUsuario}</p>
       </PostHeader>
 
