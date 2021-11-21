@@ -4,6 +4,12 @@ import Music from "./components/Music";
 import RenderList from './components/RenderList';
 
 
+
+
+
+
+
+
 export default class App extends React.Component{
   state = {
     page: "cadastroMusica",
@@ -39,6 +45,7 @@ export default class App extends React.Component{
   render(){
     return(
       <div>
+        
         {this.selectPage()}
       </div>
     )

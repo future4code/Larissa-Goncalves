@@ -1,5 +1,8 @@
 import axios from "axios";
 import React from "react";
+import styled from "styled-components";
+import img from './img/music.png'
+import spotifyImg from './img/spoti-yellow.png'
 
 export default class Music extends React.Component {
     state = {
@@ -8,29 +11,6 @@ export default class Music extends React.Component {
         inputUrl: '',
         playlistMusic: [],
     }
-
-    // selectPlaylist = (playlist) => {
-    //     this.setState({ playlistId: playlist.id });
-    
-    //     axios
-    //       .get(
-    //         `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${playlist.id}/tracks`,
-    //         {
-    //           headers: {
-    //             Authorization: "kethreen-lanes-cruz"
-    //           }
-    //         }
-    //       )
-    //       .then((res) => {
-    //         this.setState({ tracks: res.data.result.tracks });
-    
-    //         this.setState({ screen: "tracks" });
-    //       })
-    //       .catch((err) => {
-    //         alert(err.response.data.message, "Tente novamente!");
-    //       });
-    //   };
-  
 
     onChangeNameMusic = (event) => {
         this.setState({inputNameMusic: event.target.value})
@@ -120,25 +100,185 @@ export default class Music extends React.Component {
 
     render(){
         const allTracks = this.state.playlistMusic.map((tracks) => (
-            <div key={tracks.id} >
+            <DivList key={tracks.id} >
             <p>{tracks.name}</p>
             <p>{tracks.artist}</p>
             <p>{tracks.url}</p>
 
-            <button onClick={() => this.removeTrackFromPlaylist(tracks.id)}>
+            <buttonDelete onClick={() => this.removeTrackFromPlaylist(tracks.id)}>
                 Delete
-            </button>
-            </div>
+            </buttonDelete>
+            </DivList>
         ))
         return(
-            <div>
-                <h3>Adicionar Musicas</h3>
+            <DivPrincipal>
+                <divAdd>
+                <divHeader>
+                <img src={spotifyImg}/>
+                 <h1>labefy</h1>
+
+                <h3>Adicione uma música a sua playlist</h3>
+        
+                </divHeader>
+                <DivInput>
                 <input placeholder={'nome da música'} value={this.state.inputNameMusic} onChange={this.onChangeNameMusic}></input>
                 <input placeholder={'artista'} value={this.state.inputArtist} onChange={this.onChangeArtist}></input>
                 <input placeholder={'url'} value={this.state.inputUrl} onChange={this.onChangeUrl}></input>
+                </DivInput>
+                <DivBotao>
                 <button onClick={this.addTrackToPlaylist}>Adicionar Música</button>
                 <button onClick={this.props.goToRenderList}>Voltar a tela anterior</button>
+                </DivBotao>
+                <DivTotal>
                 {allTracks}
-            </div>
+                </DivTotal>
+                </divAdd>
+
+               
+                
+                
+                <divImg>
+                    <img src={img}/>
+
+                </divImg>
+                
+            </DivPrincipal>
         )}
 }
+
+///styldes/////////////
+
+const DivPrincipal = styled.div`
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+
+  divAdd{
+      divHeader{
+          display: flex;
+          
+          img{
+          height: 30px;
+       
+          padding:10px;
+
+        }
+        h1{
+          font-size: 20px;
+          color: #141f40;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         
+        }        
+        h3{
+            display: flex;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #141f40;
+            margin-left: 28%;
+        }
+      }
+
+
+    }
+
+
+  divImg{
+     img{
+         height: 100vh;
+     }
+  }
+
+`
+const DivInput = styled.div`
+    display:flex;
+    justify-content:center;
+    gap: 20px;
+  
+    input{
+        border: solid 2px #ffba0a;
+        border-radius: 20px ;
+        height: 3vh;
+        width: 15vw;
+        text-align: center;
+    }
+
+    input:hover{
+            background-color: #ffba0a;
+        }
+    `
+const DivBotao = styled.div`
+    display:flex;
+    justify-content:center;
+    margin:20px;
+    gap: 20px;
+
+    button{
+        
+    color: #141f40;
+    background-color:transparent;
+    align-items: center;
+    border: solid 2px #ffba0a;
+    border-radius: 20px;
+    width: 8vw;
+    height: 3vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    
+    }
+
+    button:hover{
+        background-color:#ffba0a;
+          color: white;
+          border: none;
+          
+    }
+`
+const DivList = styled.div`
+ background-color: #221e6b;
+  border:1px solid;
+  border-radius: 10px;
+  margin: 20px;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 30vw;
+    justify-content: center;
+
+    p{
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: mediums;
+    }
+
+    buttonDelete{
+        border-radius: 20px;
+      height: 3vh;
+      width: 6vw;
+      margin: 12px;
+      background-color: #ffba0a;
+      border: none;
+      color:#141f40 ;
+      text-align: center;
+      
+      
+
+    }
+
+    buttonDelete:hover{
+        cursor: pointer;
+        border: solid 2px #ffba0a;
+        background-color:transparent;
+        color: white;
+
+    }
+
+`
+
+const DivTotal = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+
+
+

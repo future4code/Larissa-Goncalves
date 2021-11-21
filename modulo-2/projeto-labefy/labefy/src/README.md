@@ -11,6 +11,12 @@ https://labefy-mother.surge.sh/
 ## 📦 Desenvolvimento
 
 Funcionalidades:
+.Troca de páginas
+.Adicionar uma playlist
+.Ver playlists
+.Deletar playlists 
+.Adicionar músicas
+.Deletar músicas
 
  Responsividade:
 
