@@ -3,7 +3,7 @@
 Aplicação web inspirada no APP spotify.
 Consolidando conhecimentos em Integração com API.
 
-### Link Surge (Veja na web)
+### Link Surge ( Veja na web )
 
 https://labefy-mother.surge.sh/
 
