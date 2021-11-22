@@ -19,9 +19,8 @@ Funcionalidades:
 
 
 ### O que não funciona
-.Não passa parametro do id para abrir músicas da playlist.
-
- Responsividade:
+* Não passa parametro do id para abrir músicas da playlist.
+* Play de música.
 
 ## 🛠️ Construído com
 * REACT.JS
