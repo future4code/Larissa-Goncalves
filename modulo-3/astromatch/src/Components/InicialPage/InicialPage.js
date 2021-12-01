@@ -22,7 +22,7 @@ const InicialPage = (props) => {
     };
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  const ChoosePerson = (event) => {
+  const choosePerson = (event) => {
   axios
     .post(
       "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/choose-person",
@@ -34,13 +34,21 @@ const InicialPage = (props) => {
     .then((res) => {
       console.log(res.data);
       getProfile();
+      // if(res.data.isMatch ===  "true"){
+      //   return alert("Deu Match")
+      // }else {
+      //   return alert("Ainda não")
+      // }
     })
     .catch((err) => {
       console.log(err);
     });
+  
 };
 //////////////////////////////////////
     useEffect(() => {getProfile()}, [])
+
+    
 
   return(
     <DivCard>
@@ -53,8 +61,8 @@ const InicialPage = (props) => {
          profile.id ? <div> <ImagemPerfil src={profile.photo}/> <h3>{profile.name} , {profile.age}</h3> <p>{profile.bio}</p> </div>: <p>Todos os perfis já foram vistos</p> 
       }
     <div>
-        <button onClick={() => ChoosePerson(false)}>X</button>
-        <button onClick={() => ChoosePerson(true)}>v</button>
+        <button onClick={() => choosePerson(false)}>X</button>
+        <button onClick={() => choosePerson(true)}>v</button>
       
       
     </div>

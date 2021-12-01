@@ -13,5 +13,15 @@ export const DivMatch = styled.div`
     border: solid 1px;
   }
 
-
   `
+
+  export const DivRender = styled.div`
+    display: flex;
+    flex-direction: row;
+    `
+
+  export const DivImg = styled.img`
+  height: 60px;
+  width: 60px;
+  border-radius: 80px;
+    `
