@@ -12,5 +12,9 @@ export const DivCard = styled.div`
   div{
     border:1px solid ;
   }
-
 `
+
+export const ImagemPerfil = styled.img`
+  height: 400px;
+  width: 400px;
+`;
