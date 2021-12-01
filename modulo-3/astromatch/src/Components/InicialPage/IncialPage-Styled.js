@@ -8,13 +8,17 @@ export const DivCard = styled.div`
   margin-top: 100px;
   display: grid;
   grid-template-rows: 0.5fr 4fr 1fr 1fr;
+ 
 
   div{
     border:1px solid ;
+    
   }
 `
 
 export const ImagemPerfil = styled.img`
   height: 400px;
-  width: 400px;
+  width: 360px;
+  padding:20px;
+  
 `;
