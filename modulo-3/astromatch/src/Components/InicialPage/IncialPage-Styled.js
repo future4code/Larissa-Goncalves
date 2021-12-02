@@ -20,5 +20,4 @@ export const ImagemPerfil = styled.img`
   height: 400px;
   width: 360px;
   padding:20px;
-  
 `;

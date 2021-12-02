@@ -8,7 +8,7 @@ const InicialPage = (props) => {
   const getProfile = () => {
     axios
       .get(
-        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person"
+        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person",
       )
       .then((response) => {
         const matchPerson = response.data.profile

@@ -10,7 +10,7 @@ const MatchPage = (props) => {
   const getMatches = () => {
     axios
     .get(
-      "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/matches"
+      "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/matches",
     )
     .then((response) => {
       const listMatches = response.data.matches
@@ -41,13 +41,29 @@ const MatchPage = (props) => {
     </DivRender>
   })
 
+  const clearMatchs = () => {
+    axios.put("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/clear",
+    )
+    .then((res) => {
+      setMatches([])
+      alert("Matches apagados com sucesso!")
+      console.log((res.data.profile))
+
+    })
+    .catch((err) => {
+      console.log(err)
+      alert("DEsculpe algo deu errado, tente novamente")
+
+    })
+  }
+
   return (
     <DivMatch>
       <div>
         <button onClick={() => props.changePage("inicialPage")}>
           Voltar aos matches
         </button>
-        <button>limpar matches</button>
+        <button onClick={() => clearMatchs()}> limpar matches</button>
         Você tem {allMatches.length} Match
         
   
