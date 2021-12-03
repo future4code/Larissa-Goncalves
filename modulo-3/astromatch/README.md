@@ -1,5 +1,4 @@
 ### Atromatch 💓
-https://astromatch.tashalovedesign.com/wp-content/uploads/2021/03/Logo-astro-match-exe-final_pink-notag.png
 
 * By Larissa Lanes 👩🏻‍💻
 
