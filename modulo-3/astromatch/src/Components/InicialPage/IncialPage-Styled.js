@@ -10,12 +10,6 @@ export const DivCard = styled.div`
   display: grid;
   grid-template-rows: 1fr 4fr 1fr 2fr;
   background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
-  
-
- 
-  div{
-    /* border:1px solid ; */
-  }
 `
 export const ImagemPerfil = styled.img`
   border-radius: 1%; 
@@ -24,8 +18,7 @@ export const ImagemPerfil = styled.img`
   display: flex;
   margin-left: 19px;
   box-shadow: 6px 6px 10px 2px #f53272;
-`;
-
+`
 export const DivBio = styled.div`
   color: white;
   
@@ -40,15 +33,13 @@ export const DivBio = styled.div`
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
 `
-
 export const DivButton = styled.div`
   display: flex;
   justify-content: center;
   gap: 60px;
   margin-top: 20px;
   `
-
-  export const DivHeader = styled.div`
+export const DivHeader = styled.div`
     display: flex;
     justify-content:flex-end;
     padding: 20px;
@@ -58,7 +49,7 @@ export const DivButton = styled.div`
       width: 100px;
       margin-right: 200px;
     }
-    `
+  `
 
 
 

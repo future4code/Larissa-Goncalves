@@ -9,3 +9,9 @@ export const DivLottie = styled.div`
     margin-top: 200px;
     margin-left: 140px;
 `
+export const Title = styled.h3`
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font: 2em;
+    margin-left: 50px;
+`

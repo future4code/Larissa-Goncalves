@@ -1,12 +1,9 @@
 import Lottie from 'react-lottie';
-import { useState } from "react";
 import animationData from './animation.json';
+import { Title } from './LoadingPage-Styled';
 
 const LoadingPage = () => {
-    const [animationState, setAnimationState] = useState({
-        isStopped: false, isPaused:false
-    });
-
+   
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -15,19 +12,15 @@ const LoadingPage = () => {
             preserveAspectRatio: 'xMidYmid slice'
         }
     };
-
-    return(
+    return (
         <div>
             <Lottie
-             options={defaultOptions}
-            height={400}
-            width={400}
-            isStopped={animationState.isStopped}
-            isPaused={animationState.isPaused}
+                options={defaultOptions}
+                height={400}
+                width={400}
             />
-            
+            <Title>Por favor limpe seus matchs</Title>
         </div>
     )
 }
-
 export default LoadingPage;
