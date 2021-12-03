@@ -1,6 +1,14 @@
+
+
+import { Fab, IconButton, Tooltip } from "@material-ui/core";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { DivCard, ImagemPerfil} from "./IncialPage-Styled";
+import { DivBio, DivCard, ImagemPerfil} from "./IncialPage-Styled";
+import { CheckCircle, CloseOutlined, FavoriteOutlined, PaletteOutlined} from "@material-ui/icons";
+import { ForumOutlined } from "@material-ui/icons";
+
+// import { palette } from '@material-ui/system';
+
 
 const InicialPage = (props) => {
   const [profile, setProfile] = useState({});
@@ -43,28 +51,29 @@ const InicialPage = (props) => {
     .catch((err) => {
       console.log(err);
     });
-  
 };
 //////////////////////////////////////
     useEffect(() => {getProfile()}, [])
 
-    
-
   return(
     <DivCard>
     <div>
-      <button onClick={() => props.changePage("MatchPage")}>
-        ver matchs
-      </button>
+      <h1></h1>
+    <Tooltip title="Ver Matchs">
+        <IconButton aria-label="matches" onClick={() => props.changePage("MatchPage")} > 
+       <ForumOutlined color='primary'/>
+        </IconButton>
+      </Tooltip>
     </div>
       {
-         profile.id ? <div> <ImagemPerfil src={profile.photo}/> <h3>{profile.name} , {profile.age}</h3> <p>{profile.bio}</p> </div>: <p>Todos os perfis já foram vistos</p> 
+         profile.id ? <DivBio> <ImagemPerfil src={profile.photo}/> <h3>{profile.name} , {profile.age} <CheckCircle color='tercery' /> </h3> <p>{profile.bio}</p> </DivBio>: <FavoriteOutlined fontSize='large' color='primary'/>
       }
     <div>
-        <button onClick={() => choosePerson(false)}>X</button>
-        <button onClick={() => choosePerson(true)}>v</button>
-      
-      
+        <Fab onClick={() => choosePerson(false)} aria-label="edit"><CloseOutlined color='error'/></Fab>
+        <Fab onClick={() => choosePerson(true)}  aria-label="edit"> <FavoriteOutlined color="success"/></Fab>
+    </div>
+    <div>
+   
     </div>
   </DivCard>
 );

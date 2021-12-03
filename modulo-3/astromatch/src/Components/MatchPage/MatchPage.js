@@ -1,7 +1,10 @@
+import { IconButton, Tooltip } from "@material-ui/core";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import swal from "sweetalert";
 import { DivMatch, DivImg, DivRender} from "./MatchPage-Styled";
-
+import { BackspaceOutlined, FavoriteOutlined, GroupAddOutlined } from "@material-ui/icons";
+import { buttonColor, deslikeColor } from "../../Constants/Colors";
 
 const MatchPage = (props) => {
   const [matches, setMatches] = useState([]);
@@ -16,11 +19,9 @@ const MatchPage = (props) => {
       const listMatches = response.data.matches
       setMatches(listMatches)
       console.log(response.data.matches);
-
     })
     .catch((err) => {
       console.log(err)
-
     })
   }
 
@@ -36,8 +37,6 @@ const MatchPage = (props) => {
     return <DivRender key={match.id}>
       <DivImg src={match.photo} />
       <h3>{match.name}, {match.age}</h3>
-      
-
     </DivRender>
   })
 
@@ -46,29 +45,51 @@ const MatchPage = (props) => {
     )
     .then((res) => {
       setMatches([])
-      alert("Matches apagados com sucesso!")
-      console.log((res.data.profile))
-
+      swal({
+        title: "CUIDADO! ",
+        text: "Apagar todos os matches?",
+        icon: "warning",
+        // buttons: true,
+        // dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete ) {
+          swal("Seus matches foram deletados com sucesso!", {
+            icon: "success",
+          });
+        } else {
+          // swal("Nenhum match deletado!");
+        }
+      });
     })
+      
     .catch((err) => {
       console.log(err)
-      alert("DEsculpe algo deu errado, tente novamente")
-
+      swal({
+        title: "ERRO!",
+        text: "Desculpe algo deu errado!",
+        icon : "warning",
+        buttons: true,
+      })
     })
   }
-
   return (
     <DivMatch>
       <div>
-        <button onClick={() => props.changePage("inicialPage")}>
-          Voltar aos matches
-        </button>
-        <button onClick={() => clearMatchs()}> limpar matches</button>
-        Você tem {allMatches.length} Match
-        
-  
+      <Tooltip title="Encontrar Matchs">
+        <IconButton aria-label="Back" onClick={() => props.changePage("inicialPage")} > 
+       <GroupAddOutlined color='primary'/>
+        </IconButton>
+      </Tooltip>
+        <Tooltip title="Apagar Matchs">
+        <IconButton aria-label="delete" onClick={() => clearMatchs()}> 
+       <BackspaceOutlined color='error'/>
+        </IconButton>
+      </Tooltip>
+      <FavoriteOutlined color='primary'/>{allMatches.length}
       </div>
       <div>
+        
         {allMatches}
         {/* {
           allMatches.id ? <div> <img src={allMatches.photo}/> <h3>{allMatches.name} , {allMatches.age}</h3></div> : <p>Ainda nenhum match</p>
