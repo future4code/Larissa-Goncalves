@@ -23,7 +23,6 @@ export const ImagemPerfil = styled.img`
   width: 340px;
   display: flex;
   margin-left: 19px;
-  margin-top: 30px;
   box-shadow: 6px 6px 10px 2px #f53272;
 `;
 
@@ -32,7 +31,7 @@ export const DivBio = styled.div`
   
   h3{
     margin-left: 23px;
-    font-size: 2em;
+    font-size: 1em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
   p{
@@ -41,5 +40,25 @@ export const DivBio = styled.div`
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
 `
+
+export const DivButton = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 20px;
+  `
+
+  export const DivHeader = styled.div`
+    display: flex;
+    justify-content:flex-end;
+    padding: 20px;
+
+    img{
+      height: 70px;
+      width: 100px;
+      margin-right: 200px;
+    }
+    `
+
 
 

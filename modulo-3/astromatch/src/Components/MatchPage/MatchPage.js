@@ -2,9 +2,9 @@ import { IconButton, Tooltip } from "@material-ui/core";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import swal from "sweetalert";
-import { DivMatch, DivImg, DivRender} from "./MatchPage-Styled";
+import { DivMatch, DivImg, DivRender, DivHeaderMatches} from "./MatchPage-Styled";
 import { BackspaceOutlined, FavoriteOutlined, GroupAddOutlined } from "@material-ui/icons";
-import { buttonColor, deslikeColor } from "../../Constants/Colors";
+
 
 const MatchPage = (props) => {
   const [matches, setMatches] = useState([]);
@@ -75,7 +75,8 @@ const MatchPage = (props) => {
   }
   return (
     <DivMatch>
-      <div>
+      <DivHeaderMatches>
+     
       <Tooltip title="Encontrar Matchs">
         <IconButton aria-label="Back" onClick={() => props.changePage("inicialPage")} > 
        <GroupAddOutlined color='primary'/>
@@ -84,10 +85,14 @@ const MatchPage = (props) => {
         <Tooltip title="Apagar Matchs">
         <IconButton aria-label="delete" onClick={() => clearMatchs()}> 
        <BackspaceOutlined color='error'/>
-        </IconButton>
+        </IconButton >
+       
       </Tooltip>
       <FavoriteOutlined color='primary'/>{allMatches.length}
-      </div>
+     
+      
+      </DivHeaderMatches>
+     
       <div>
         
         {allMatches}

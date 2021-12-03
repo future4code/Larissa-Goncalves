@@ -38,3 +38,8 @@ export const DivMatch = styled.div`
   
  
     `
+
+    export const DivHeaderMatches = styled.div`
+      margin: 10px;
+      color: white;
+    `

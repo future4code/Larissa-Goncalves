@@ -3,9 +3,12 @@
 import { Fab, IconButton, Tooltip } from "@material-ui/core";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { DivBio, DivCard, ImagemPerfil} from "./IncialPage-Styled";
+import { DivBio, DivButton, DivCard, DivHeader, ImagemPerfil} from "./IncialPage-Styled";
 import { CheckCircle, CloseOutlined, FavoriteOutlined, PaletteOutlined} from "@material-ui/icons";
 import { ForumOutlined } from "@material-ui/icons";
+import LoadingPage from "../LoadingPage/LoadingPage";
+// import styled, {keyframes} from 'styled-components';
+// import {bounce} from 'react-animation';
 
 // import { palette } from '@material-ui/system';
 
@@ -57,24 +60,26 @@ const InicialPage = (props) => {
 
   return(
     <DivCard>
-    <div>
-      <h1></h1>
+    <DivHeader>
+      <img src={'https://astromatch.tashalovedesign.com/wp-content/uploads/2021/03/Logo-astro-match-exe-final_pink-notag.png'}/>
+      
     <Tooltip title="Ver Matchs">
         <IconButton aria-label="matches" onClick={() => props.changePage("MatchPage")} > 
        <ForumOutlined color='primary'/>
         </IconButton>
       </Tooltip>
-    </div>
-      {
-         profile.id ? <DivBio> <ImagemPerfil src={profile.photo}/> <h3>{profile.name} , {profile.age} <CheckCircle color='tercery' /> </h3> <p>{profile.bio}</p> </DivBio>: <FavoriteOutlined fontSize='large' color='primary'/>
-      }
+     
+    </DivHeader>
     <div>
+      {
+         profile.id ? <DivBio>  <ImagemPerfil src={profile.photo}/> <h3>{profile.name} , {profile.age} <CheckCircle color='tercery' /> </h3> <p>{profile.bio}</p> </DivBio>: <div><LoadingPage/></div>
+      }
+      </div>
+    <DivButton>
         <Fab onClick={() => choosePerson(false)} aria-label="edit"><CloseOutlined color='error'/></Fab>
         <Fab onClick={() => choosePerson(true)}  aria-label="edit"> <FavoriteOutlined color="success"/></Fab>
-    </div>
-    <div>
-   
-    </div>
+    </DivButton>
+    
   </DivCard>
 );
 };
