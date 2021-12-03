@@ -3,8 +3,7 @@ https://astromatch.tashalovedesign.com/wp-content/uploads/2021/03/Logo-astro-mat
 
 * By Larissa Lanes 👩🏻‍💻
 
-Aplicação web reproduzindo a interface gráfica de um smartphone.
-Inspiração de funcionálidades inspirada em Apps de relacionamento.
+Aplicação web reproduzindo a interface gráfica de um smartphone,Inspiração de funcionálidades inspirada em Apps de relacionamento.
 Consolidando conhecimentos em Integração com API e integração com Libs.
 
 ### Link Surge (Veja na web)
@@ -13,12 +12,12 @@ https://astromatch-grandmother.surge.sh/
 ### 💻 Desenvolvimento
 
 Funcionalidades:
-.Troca de páginas com if e else.
-.Checkpoints da Appi(renderizar perfis em randow, botão match para selecionar perfis,e renderização de array com perfis que em reposta foram true.)
-.Tela Loading com animação.
+* Troca de páginas com if e else.
+* Checkpoints da Appi(renderizar perfis em randow, botão match para selecionar perfis,e renderização de array com perfis que em reposta foram true.)
+* Tela Loading com animação.
 
 ### O que não funciona
-.Ao termino de todos os perfis já vistos a tela quebra até que seja feito o reset dos matchs.
+* Ao termino de todos os perfis já vistos a tela quebra até que seja feito o reset dos matchs.
 
 ## 🛠️ Construído com
 * REACT.JS
