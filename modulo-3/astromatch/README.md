@@ -1,4 +1,4 @@
-### Atromatch 💓
+### Astro-match 💓
 
 * By Larissa Lanes 👩🏻‍💻
 
