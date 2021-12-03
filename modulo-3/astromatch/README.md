@@ -2,7 +2,7 @@
 
 * By Larissa Lanes 👩🏻‍💻
 
-Aplicação web reproduzindo a interface gráfica de um smartphone,Inspiração de funcionálidades inspirada em Apps de relacionamento.
+Aplicação web reproduzindo a interface gráfica de um smartphone,Inspiração de funcionalidades inspirada em Apps de relacionamento.
 Consolidando conhecimentos em Integração com API e integração com Libs.
 
 ### Link Surge (Veja na web)
