@@ -1,53 +1,58 @@
-import Styled from 'styled-components'
+import styled from "styled-components";
 
-export const DivHome = Styled.div`
-    
-`
+export const DivHome = styled.div`
+  border: solid 1px green;
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  background-color: #000000;
 
-export const DivGrid = Styled.div`
-    display:grid;
-    grid-template-columns: 1.5fr 1fr;
-    border:solid 1px;
+  div {
+    /* border: solid 1px; */
+  }
+`;
 
-    div{
-        border: solid 1px;
-    }
+export const DivText = styled.div`
+  border: solid 1px red;
+  height: 70vh;
+  margin: 20px;
+  display: grid;
+  grid-template-rows: 2fr 0.4fr;
 
-   `
-export const DivText = Styled.div`
-    height:60vh;
-    weight:20vw;
-    margin:70px;
-    display: grid;
-    grid-template-rows: 2fr 0.5fr;
-    
-`
-
-export const DivPhoto = Styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height:70vh;
-    margin: 80px;
-    gap:20px;
-    
-    
-    `
-
-export const DivFlow = Styled.div`
-    border:solid 1px pink;
-    height:50vh;
+  h1, h4{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
-    justify-content:center;
+    justify-content: center;
+    
+  }
 
-    div{
-        display: flex;
-        flex-direction: column;
-        margin: 30px;
-        margin-top: 90px;
-        height:300px;
-        width: 400px;
-        border: solid 1px red;
-        
+`;
 
-    }
-    `
+export const DivButton = styled.div`
+    display: flex;
+    justify-content: center;
+
+
+  button{
+    gap: 10px;
+      margin: 20px;
+
+}
+`
+export const DivImg = styled.div`
+ background: linear-gradient(45deg, #7a1fa2 30%, #3b96f3 90%);
+  border: solid 1px black;
+  display: flex;
+  border-radius: 0px 0px 0px 20%;
+  
+  div {
+    display: flex;
+    height: 87vh;
+    width: 200px;    
+  }
+
+  img {
+    height: 600px;
+    width: 200px;
+  }
+`;

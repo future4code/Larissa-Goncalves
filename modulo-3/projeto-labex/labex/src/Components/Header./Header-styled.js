@@ -1,10 +1,16 @@
-import Styled from 'styled-components'
+import styled from "styled-components";
 
-export const DivHeader = Styled.div`
-    height:11vh;
-    width:98vw;
-    border:solid 1px black;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-`
+export const DivHeader = styled.div`
+  border: solid 1px black;
+  height: 11vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  button {
+  }
+
+  img{
+    height: 100px;
+    width: 100px;
+  }
+`;

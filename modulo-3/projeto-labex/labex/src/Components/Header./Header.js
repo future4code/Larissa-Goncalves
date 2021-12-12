@@ -1,20 +1,32 @@
+import { useHistory } from "react-router-dom";
 import { DivHeader } from "./Header-styled";
-
+import ImgLogo from "../../img/logoLabeXIMG.png";
+import ImgLogoText from "../../img/LogoLabeXV.png"
 const Header = () => {
-    return(
-        <DivHeader>
-            <div>
-            <img/>
-            oii eu sou o header
-            </div>
-            
-            <div> <button>HOME</button>
-            <button>QUEM AMOU</button></div>
-            
-            
+  const history = useHistory();
 
-        </DivHeader>
-    )
-}
+  const goToHome = () => {
+    history.push("/");
+  };
+
+  const goToLogin = () => {
+    history.push("/login");
+  };
+
+  return (
+    <DivHeader>
+      <div> 
+        <img src={ImgLogo}></img>
+        <img src={ImgLogoText}></img>
+        
+        
+      </div>
+      <div>
+        {/* <button onClick={goToHome}>Home</button>
+        <button onClick={goToLogin}>Login</button> */}
+      </div>
+    </DivHeader>
+  );
+};
 
 export default Header;
