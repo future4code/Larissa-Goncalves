@@ -37,15 +37,4 @@ export const DivImg = styled.div`
  background: linear-gradient(45deg, #7a1fa2 30%, #3b96f3 90%);
   display: flex;
   border-radius: 0px 0px 0px 20%;
-  
-  div {
-    display: flex;
-    height: 87vh;
-    width: 200px;    
-  }
-
-  img {
-    height: 600px;
-    width: 200px;
-  }
 `;

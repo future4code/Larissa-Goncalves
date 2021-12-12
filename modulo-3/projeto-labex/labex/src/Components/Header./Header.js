@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { DivHeader } from "./Header-styled";
 import ImgLogo from "../../img/logoLabeXIMG.png";
-import ImgLogoText from "../../img/LogoLabeXV.png"
+
 const Header = () => {
   const history = useHistory();
 
@@ -17,7 +17,7 @@ const Header = () => {
     <DivHeader>
       <div> 
         <img src={ImgLogo}></img>
-        <img src={ImgLogoText}></img>
+       
         
         
       </div>

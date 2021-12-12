@@ -12,5 +12,6 @@ export const DivHeader = styled.div`
   img{
     height: 100px;
     width: 100px;
+    margin: 20px;
   }
 `;
