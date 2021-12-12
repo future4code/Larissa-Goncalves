@@ -1,18 +1,12 @@
 import styled from "styled-components";
 
 export const DivHome = styled.div`
-  border: solid 1px green;
   display: grid;
   grid-template-columns: 1fr 0.6fr;
   background-color: #000000;
-
-  div {
-    /* border: solid 1px; */
-  }
 `;
 
 export const DivText = styled.div`
-  border: solid 1px red;
   height: 70vh;
   margin: 20px;
   display: grid;
@@ -41,7 +35,6 @@ export const DivButton = styled.div`
 `
 export const DivImg = styled.div`
  background: linear-gradient(45deg, #7a1fa2 30%, #3b96f3 90%);
-  border: solid 1px black;
   display: flex;
   border-radius: 0px 0px 0px 20%;
   

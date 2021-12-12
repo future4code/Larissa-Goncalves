@@ -5,7 +5,7 @@ import {Fab} from "@mui/material"
 import LocalAirportRoundedIcon from '@mui/icons-material/LocalAirportRounded';
 import HttpsRoundedIcon from '@mui/icons-material/HttpsRounded';
 import ExtraPage from "../extraPage/ExtraPage"
-// import animationTrip from "../../Components/Animation/animationTrip.json";
+import animationTrip from "../../Components/Animation/animationTrip.json";
 import Lottie from "react-lottie"
 
 
@@ -19,14 +19,14 @@ const HomePage = () => {
     history.push("/trips/list");
   };
 
-//   const defaultOptions = {
-//     loop: true,
-//     autoplay: true,
-//     animationData: animationTrip,
-//     rendererSettings: {
-//         preserveAspectRatio: 'xMidYmid slice'
-//     }
-// };
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationTrip,
+    rendererSettings: {
+        preserveAspectRatio: 'xMidYmid slice'
+    }
+};
 
   return (
     <DivHome>
@@ -55,11 +55,11 @@ const HomePage = () => {
       </div>
       <div>
         <DivImg>
-        {/* <Lottie
+        <Lottie
                 options={defaultOptions}
-                height={400}
-                width={400}
-            /> */}
+                height={820}
+                width={500}
+            />
         </DivImg>
 
       </div>
