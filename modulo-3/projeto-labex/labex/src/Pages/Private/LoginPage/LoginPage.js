@@ -1,72 +1,88 @@
-import { useHistory } from "react-router";
-import { DivLoginPage } from "./LoginPage-Styled";
-import { useState } from "react";
-import axios from 'axios';
-import { Auth, URL_BASE } from "../../../Constants/Url";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+import { useProtectedLog } from "../../../hooks/useProtected";
+import { urlLogin } from "../../../Constants/Url";
+import { useForm } from "../../../hooks/useForm";
+import {Fab, TextField} from "@material-ui/core"
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import { DivInput, DivLogin, DivLoginPage } from "./LoginPage-Styled";
+import LockOpenRoundedIcon from '@mui/icons-material/LockOpenRounded';
+
+
+
+
+const initialForm = {
+  email: "",
+  password: ""
+};
 
 const LoginPage = () => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const history = useHistory()
+  const history = useHistory();
+  useProtectedLog();
+  const [form, onChange] = useForm(initialForm);
 
-    const goToHome = () => {
-        history.push('/')
-    }
-    const goToAdmHome = () => {
-        history.replace('/admin/trips/list')
-    }
+  const goToHomePage = () => {
+    history.push("/");
+  };
 
-    const onChangeEmail = (e) => {
-        setEmail(e.target.value)
+  const goToAdminHomePage = () => {
+    history.push("/admin/trips/list");
+  };
 
-    }
-    const onChangePassword = (e) => {
-        setPassword(e.target.value)
-        
-    }
+  const login = (event) => {
+    event.preventDefault();
+    const body = {
+      email: form.email,
+      password: form.password
+    };
+    axios
+      .post(urlLogin, body)
+      .then((res) => {
+        console.log(res.data.response);
+        window.localStorage.setItem("token", res.data.token);
+        goToAdminHomePage();
+        alert(
+          `Bem Vindo!`,
+        );
+      })
+      .catch((err) => {
+        alert(
+          "E-mail ou Senha incorretos, preencha os dados corretamente!"
+        );
+      });
+  };
 
-    const Login = () => {
-        console.log(email, password)
-        const body = {
-            email: email,
-            password: password,
-
-        }
-        
-        // axios.post`${URL_BASE}/login, body`
-        axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmbjQ3bVN4c0c5S1B0QUxhQnh4IiwiZW1haWwiOiJBZG1pbkxhcmlzc2FAZ21haWwuY29tIiwiaWF0IjoxNjM4OTg3MTI1fQ.DkhdmG8Af-mljIneavlJXT2yFckEdg1M7k2fgmzSLAQ/login", body)
-
-        .then((res) => {
-            console.log(res.data)
-            console.log('Senha correta')
-
-        })
-        .catch((err) => {
-            console.log('Senha incorreta')
-            console.log(err.response.data)
-
-
-        })
-        
-    }
-
-    return(
-        <DivLoginPage>
-             <button onClick={goToHome}>
-                Voltar home
-
-            </button> 
-           
-            llogin page
-           <div>
-              <input placeholder={'email'} type={'email'} value={email} onChange={onChangeEmail}></input>
-                <input placeholder={'senha'} type={'password'} value={password} onChange={onChangePassword}></input>
-                <button onClick={Login}>
-                entrar
-            </button>
-           </div>
-        </DivLoginPage>
-    )
-}
+  return (
+    <DivLoginPage>
+      <DivLogin>
+      <Fab color="primary" aria-label="add" onClick={goToHomePage}>
+          <HomeRoundedIcon/>
+        </Fab>
+      </DivLogin>
+      <DivInput>
+        <form onSubmit={login}>
+        <h2>Login </h2>
+        <TextField id="standard-basic"
+         label="Email" variant="standard"
+         name="email"
+         value={form.email}
+         onChange={onChange}
+         />
+          <TextField id="standard-basic" 
+          label="Password" variant="standard" 
+          name="password"
+          value={form.password}
+          onChange={onChange}
+          type="password"/>
+           <Fab type="submit" variant="extended" color="primary">
+               <LockOpenRoundedIcon/>
+         
+           Login
+            </Fab>
+        </form>
+      </DivInput>
+    </DivLoginPage>
+  );
+};
 
 export default LoginPage;

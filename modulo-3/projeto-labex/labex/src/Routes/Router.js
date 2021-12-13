@@ -4,6 +4,7 @@ import ListTripsPage from "../Pages/Public/ListTripPage/ListTripPage";
 import LoginPage from "../Pages/Private/LoginPage/LoginPage";
 import ApplicationFormPage from "../Pages/Public/ApplicationFormPage/ApplicationFormPage"
 import AdminHomePage from "../Pages/Private/AdminHomePage/AdminHomePage"
+import TripDetailsPage from "../Pages/Private/TripDetailsPage/TripDetailsPage"
 
 const Router = () => {
   return (
@@ -16,9 +17,9 @@ const Router = () => {
           <ListTripsPage />
         </Route>
 
-        {/* <Route exact path="/admin/trips/list">
+        <Route exact path="/admin/trips/list">
           <AdminHomePage />
-        </Route> */}
+        </Route>
 
         <Route exact path="/login">
           <LoginPage />
@@ -28,9 +29,9 @@ const Router = () => {
           <ApplicationFormPage />
         </Route>
 
-        {/* <Route exact path="/admin/trips/:id">
+        <Route exact path="/admin/trips/:id">
           <TripDetailsPage />
-        </Route>  */}
+        </Route> 
 
         <Route>
           <div>Página não encontrada</div>
