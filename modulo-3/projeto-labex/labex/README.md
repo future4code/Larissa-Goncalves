@@ -1,4 +1,4 @@
-###Projeto Labexartificial_satellite
+###Projeto Labex 🛰️
 Aplicação web react site de Viagens espaciais .
 Consolidando conhecimentos em Integração com API e integração com Libs.
 
@@ -9,14 +9,14 @@ AdminLarissa@gmail.com
 Link Surge (Veja na web)
 https://efficient-bell.surge.sh/
 
-computer_mouse Desenvolvimento
+🖱️ Desenvolvimento
 Funcionalidades:
 Troca de páginas com React-Router.
 Checkpoints da Appi(renderizar listas de viagens, página de login com restrição de autorização)
 Tela com animação.
 O que não funciona
 
-hammer_and_wrench Construído com:
+🛠️ Construído com:
 REACT.JS Libs React:
 
 axios
