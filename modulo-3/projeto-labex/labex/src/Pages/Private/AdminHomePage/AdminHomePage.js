@@ -44,8 +44,7 @@ const AdminHomePage = () => {
         }
       })
       .then((res) => {
-        alert(`a viagem ${name} foi deletada`);
-        console.log(res.data.response);
+        alert("a viagem foi deletada");
         setReload();
       })
       .catch((err) => {

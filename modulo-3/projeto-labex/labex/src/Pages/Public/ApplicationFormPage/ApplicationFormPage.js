@@ -33,7 +33,7 @@ const ApplicationFormPage = () => {
     axios
       .post(`${urlAllTrips}${form.tripSelect}/apply`, body)
       .then((res) => {
-        alert("Inscrição realizada!", "Agora é só aguardar!", "success");
+        alert("Inscrição realizada!");
       })
       .catch((err) => {
       });
@@ -83,8 +83,6 @@ const ApplicationFormPage = () => {
             placeholder="Nome"
             name="name"
             value={form.name}
-            pattern={"^.{3,}$"}
-            title={"Minimum 3 characters"}
             onChange={onChange}
             label="Nome" 
                 />

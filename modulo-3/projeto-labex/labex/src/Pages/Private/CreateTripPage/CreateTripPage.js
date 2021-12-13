@@ -126,15 +126,6 @@ const CreateTripPage = (props) => {
         alert("Dados incompletos, retorne para o formulário!");
       });
   };
-
-  const today = new Date();
-  const minToday =
-    today.getFullYear() +
-    "-" +
-    ("0" + (today.getMonth() + 1)).substr(-2) +
-    "-" +
-    ("0" + today.getDate()).substr(-2);
-
   return (
     <DivCreateTrip>
       <Fab color="primary" aria-label="add" onClick={goToAdminHomePage}>
@@ -152,7 +143,6 @@ const CreateTripPage = (props) => {
                 name="name"
                 onChange={onChange}
                 value={form.name}
-                pattern={"^.{5,}$"}
                 title={"Minimum 5 characters"}
                 />
             </div>
@@ -185,7 +175,6 @@ const CreateTripPage = (props) => {
                 onChange={onChange}
                 value={form.date}
                 type="date"
-                min={minToday}
                 id="outlined-textarea"
                 />
         </div>
