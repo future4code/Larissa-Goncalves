@@ -5,6 +5,7 @@ import LoginPage from "../Pages/Private/LoginPage/LoginPage";
 import ApplicationFormPage from "../Pages/Public/ApplicationFormPage/ApplicationFormPage"
 import AdminHomePage from "../Pages/Private/AdminHomePage/AdminHomePage"
 import TripDetailsPage from "../Pages/Private/TripDetailsPage/TripDetailsPage"
+import CreateTripPage from "../Pages/Private/CreateTripPage/CreateTripPage";
 
 const Router = () => {
   return (
@@ -19,6 +20,10 @@ const Router = () => {
 
         <Route exact path="/admin/trips/list">
           <AdminHomePage />
+        </Route>
+
+        <Route exact path="/admin/trips/create ">
+          <CreateTripPage />
         </Route>
 
         <Route exact path="/login">
