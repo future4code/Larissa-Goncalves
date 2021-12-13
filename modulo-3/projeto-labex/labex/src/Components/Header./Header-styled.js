@@ -6,9 +6,6 @@ export const DivHeader = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
 
-  button {
-  }
-
   img{
     height: 100px;
     width: 100px;

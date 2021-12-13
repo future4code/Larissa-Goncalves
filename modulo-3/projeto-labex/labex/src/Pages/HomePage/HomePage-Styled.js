@@ -16,21 +16,17 @@ export const DivText = styled.div`
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
-    justify-content: center;
-    
+    justify-content: center; 
   }
-
 `;
 
 export const DivButton = styled.div`
     display: flex;
     justify-content: center;
 
-
   button{
     gap: 10px;
       margin: 20px;
-
 }
 `
 export const DivImg = styled.div`

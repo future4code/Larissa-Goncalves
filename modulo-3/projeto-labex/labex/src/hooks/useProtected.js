@@ -13,7 +13,7 @@ export const useProtectedPage = () => {
   }, [history]);
 };
 
-// Não solicitar senha se ja estiver logado
+// Não solicitar se ja estiver logado
 
 export const useProtectedLog = () => {
   const history = useHistory();

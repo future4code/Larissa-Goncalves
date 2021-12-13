@@ -8,9 +8,6 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import { DivInput, DivLogin, DivLoginPage } from "./LoginPage-Styled";
 import LockOpenRoundedIcon from '@mui/icons-material/LockOpenRounded';
 
-
-
-
 const initialForm = {
   email: "",
   password: ""
@@ -76,7 +73,6 @@ const LoginPage = () => {
           type="password"/>
            <Fab type="submit" variant="extended" color="primary">
                <LockOpenRoundedIcon/>
-         
            Login
             </Fab>
         </form>

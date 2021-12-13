@@ -10,13 +10,11 @@ const Footer = () => {
       <div>
         <img src={imgLogo}/>
         <img src={imgLogoText}/>
-        
         </div> 
       <DivIcons>
         <img src={imgTwitter}/>
         <img src={imgInstagram}/>
         <img src={imgFacebook}/>
-       
       </DivIcons>
     </DivFooter>;
   };

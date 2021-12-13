@@ -91,12 +91,11 @@ const currencies = [
 const CreateTripPage = (props) => {
   const [form, onChange] = useForm(initialForm);
   const history = useHistory();
-  const [currency, setCurrency] = useState('EUR');
+  const [currency, setCurrency] = useState('');
 
   const handleChange = (event) => {
     setCurrency(event.target.value);
   };
-
 
   const goToAdminHomePage = () => {
     history.goBack("/admin/trips/list");
@@ -179,12 +178,8 @@ const CreateTripPage = (props) => {
                 ))}
                 </TextField>
                 </div>
-
         <div>
-                
-
                 <TextField
-                // label='Data'
                 placeholder="Data"
                 name="date"
                 onChange={onChange}
@@ -192,8 +187,6 @@ const CreateTripPage = (props) => {
                 type="date"
                 min={minToday}
                 id="outlined-textarea"
-                
-                
                 />
         </div>
          <div>

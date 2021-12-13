@@ -3,6 +3,9 @@ import { useForm } from "../../../hooks/useForm";
 import useRequestData from "../../../hooks/useRequestData";
 import { urlAllTrips } from "../../../Constants/Url";
 import axios from "axios";
+import KeyboardBackspaceRoundedIcon from '@mui/icons-material/KeyboardBackspaceRounded';
+import {Fab, TextField} from "@material-ui/core"
+import { DivApplicationForm, DivBackground } from "./ApplicationFormPage-Styled";
 
 const initialForm = {
   name: "",
@@ -22,7 +25,7 @@ const ApplicationFormPage = () => {
     event.preventDefault();
     const body = {
       name: form.name,
-      age: Number(form.age),
+      age: (form.age),
       applicationText: form.applicationText,
       profession: form.profession,
       country: form.country
@@ -30,13 +33,9 @@ const ApplicationFormPage = () => {
     axios
       .post(`${urlAllTrips}${form.tripSelect}/apply`, body)
       .then((res) => {
-        console.log(res.data);
         alert("Inscrição realizada!", "Agora é só aguardar!", "success");
-        // goToList(history);
       })
       .catch((err) => {
-        console.log(err.data.res);
-        // swal("Oops", "Dados incompletos, retorne para o formulário!", "error");
       });
   };
 
@@ -49,78 +48,88 @@ const ApplicationFormPage = () => {
         </option>
       );
     });
-  // const getCountry = countryToWord.map((country) => {
-  //   return (
-  //     <option key={country.nome} value={country.nome}>
-  //       {country.nome} - {country.sigla3}
-  //     </option>
-  //   );
-  // });
 
   const goToList = () => {
     history.push("/trips/list");
   };
 
   return (
-    <div>
+    <DivBackground>
       <div>
-        <button onClick={goToList}>Voltar a lista </button>
-        Aaqui voce se inscreve para uma viagem
-        <div>
-          {/* <input></input>
-          <input></input>
-          <input></input>
-          <input></input>
-          <input></input>
-          <input></input> */}
+        <Fab color="primary" aria-label="add" onClick={goToList}>
+          <KeyboardBackspaceRoundedIcon/>
+        </Fab>
+        </div>
+        <DivApplicationForm>
           <form onSubmit={applicationToTrip}>
-            <p>FAÇA A SUA INSCRIÇÃO</p>
-            <select
+          <h1>FAÇA A SUA INSCRIÇÃO</h1>
+            <div>
+            <TextField
+              select
+              label="Escolha o destino"
               required
               name="tripSelect"
               value={form.tripSelect}
               onChange={onChange}
+              helperText="Escolha um lugar de destino"
             >
-              <option value="">escolha uma viagem</option>
+              <option value=""></option>
               {getTrips}
-            </select>
-
-            <input
-              required
-              placeholder="Nome"
-              name="name"
-              value={form.name}
-              pattern={"^.{3,}$"}
-              title={"Minimum 3 characters"}
-              onChange={onChange}
-            ></input>
-            <input
+            </TextField>
+            </div>
+            <div>
+            <TextField
+            required
+            placeholder="Nome"
+            name="name"
+            value={form.name}
+            pattern={"^.{3,}$"}
+            title={"Minimum 3 characters"}
+            onChange={onChange}
+            label="Nome" 
+                />
+            </div>
+            <div>
+            <TextField
+            required
               placeholder="Idade"
               name="age"
+              type="number"
               value={form.age}
-              required
               min="18"
               onChange={onChange}
-            ></input>
-            <input
-              placeholder="Profissão"
-              name="profession"
-              value={form.profession}
-              required
-              pattern={"^.{6,}$"}
-              title={"Minimum 10 characters"}
-              onChange={onChange}
-            ></input>
-            <input
-              required
-              placeholder="texto de inscrição"
-              name="applicationText"
-              value={form.applicationText}
-              pattern={"^.{30,}$"}
-              title={"Minimum 30 characters"}
-              onChange={onChange}
-            ></input>
-            <select
+              label="Idade"
+            />
+            </div>
+            <div>
+            <TextField
+            required
+            placeholder="Profissão"
+            name="profession"
+            value={form.profession}
+            required
+            pattern={"^.{6,}$"}
+            title={"Minimum 10 characters"}
+            onChange={onChange}
+              label="Profissão"
+            />
+            </div>
+            <div>
+            <TextField
+             required
+             placeholder="texto de inscrição"
+             name="applicationText"
+             value={form.applicationText}
+             pattern={"^.{30,}$"}
+             title={"Minimum 30 characters"}
+             onChange={onChange}
+              label="Texto"
+            />
+            </div>
+            <div>
+               <TextField
+               select
+               label="Selecione o seu país de origem"
               required
               name="country"
               value={form.country}
@@ -133,15 +142,16 @@ const ApplicationFormPage = () => {
               <option value="Alemanha">Alemanha-DE</option>
               <option value="Argentina">Argentina-AR</option>
               <option value="Chile">Chile-CL</option>
-
-              {/* {getCountry} */}
-            </select>
-
-            <button type="submit">ENVIAR</button>
+            </TextField>
+           </div>
+           <div>
+           <Fab variant="extended" color="secondary" aria-label="add" type="submit">
+                   Enviar
+                </Fab>
+           </div>
           </form>
-        </div>
-      </div>
-    </div>
+        </DivApplicationForm>
+    </DivBackground>
   );
 };
 export default ApplicationFormPage;

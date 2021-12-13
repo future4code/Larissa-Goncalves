@@ -1,9 +1,10 @@
-
-import React from "react";
 import { useHistory } from "react-router-dom";
 import useRequestData from "../../../hooks/useRequestData";
 import { urlAllTrips } from "../../../Constants/Url";
-
+import {Fab} from "@material-ui/core"
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import LuggageRoundedIcon from '@mui/icons-material/LuggageRounded';
+import { DivListTripPage} from "./ListTripPage-Styled";
 
 const ListTripsPage = (props) => {
   const history = useHistory();
@@ -40,15 +41,19 @@ const ListTripsPage = (props) => {
     });
 
   return (
-    <div>
-      <button onClick={goToFormPage}>increverse</button>
-      <div />
-      <button onClick={goToHomePage}>home</button>
+    <DivListTripPage>
       <div>
+      <Fab color="primary" aria-label="add" onClick={goToHomePage}>
+          <HomeRoundedIcon/>
+        </Fab>
+        <Fab variant="extended" color="secondary" onClick={goToFormPage}>
+          <LuggageRoundedIcon/>
+        Inscrever-se em uma viagem
+      </Fab>
         <h1>PRÓXIMAS VIAGENS</h1>
         <p>{getTrips}</p>
       </div>
-    </div>
+    </DivListTripPage>
   );
 };
 export default ListTripsPage;

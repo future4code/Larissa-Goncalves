@@ -9,6 +9,7 @@ import {Fab} from "@material-ui/core"
 import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
 import ThumbUpAltRoundedIcon from '@mui/icons-material/ThumbUpAltRounded';
 import DoNotDisturbRoundedIcon from '@mui/icons-material/DoNotDisturbRounded';
+
 const TripDetailsPage = () => {
   useProtectedPage();
   const [tripDetail, setTripDetail] = useState([]);
@@ -52,14 +53,9 @@ const TripDetailsPage = () => {
     const token = window.localStorage.getItem("token");
     const body = { approve: aprov };
     if (body.approve === false) {
-      alert({
-        title: `Deseja Reprovar a inscrição de ${name}?`,
-        text: ` Os dados de ${name} Serão deletados definitivamente do sistema!`,
-        icon: "warning",
-        buttons: true,
-        dangerMode: true
-      }).then((willDelete) => {
-        if (willDelete) {
+      alert("CANDIDATO REPROVADO!",)
+      .then((err) => {
+        if (err) {
           axios
             .put(
               `${urlAllTrips}${params.id}/candidates/${candidateId}/decide`,
@@ -71,15 +67,13 @@ const TripDetailsPage = () => {
               }
             )
             .then((res) => {
-              alert(
-                `A inscrição de ${name} foi Reprovada!`,
-                "Dados excluídos!",
-                "error"
+              alert.window.confirm(
+                "A inscrição foi Reprovada!"
               );
               getTripDetailChosen();
             })
             .catch((error) => {
-              alert(error);
+              alert("Houve um erro,tente novamente mais tarde");
             });
         } else {
           alert("OK, Nada foi deletado!");
@@ -98,9 +92,7 @@ const TripDetailsPage = () => {
         )
         .then((res) => {
           alert(
-            "CANDIDATO ACEITO !",
-            `Inscrição de ${name} foi Aprovada!`,
-           
+            "CANDIDATO APROVADO!",
           );
           getTripDetailChosen();
         })
@@ -175,7 +167,6 @@ const TripDetailsPage = () => {
           </Fab>
       </DivButton>
       </div>
-
       <DivCards>
         <Details>
           <h2>DETALHES DA VIAGEM</h2>
