@@ -9,6 +9,7 @@ import {Fab} from "@material-ui/core"
 import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
 import ThumbUpAltRoundedIcon from '@mui/icons-material/ThumbUpAltRounded';
 import DoNotDisturbRoundedIcon from '@mui/icons-material/DoNotDisturbRounded';
+import { Alert, AlertTitle } from "@mui/material";
 
 const TripDetailsPage = () => {
   useProtectedPage();

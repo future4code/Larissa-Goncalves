@@ -120,10 +120,10 @@ const CreateTripPage = (props) => {
         }
       })
       .then((response) => {
-        alert(`A Viagem ${form.name}`, "foi criada com sucesso!", "success");
+        alert("A Viagem foi criada com sucesso!");
       })
       .catch((error) => {
-        alert(error, "Dados incompletos, retorne para o formulário!", "error");
+        alert("Dados incompletos, retorne para o formulário!");
       });
   };
 
