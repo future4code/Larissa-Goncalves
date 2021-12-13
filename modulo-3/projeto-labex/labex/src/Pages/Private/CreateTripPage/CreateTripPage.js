@@ -22,68 +22,40 @@ const currencies = [
       label: '',
     },
     {
-      value: 'Panen',
-      label: 'Panen',
+      value: 'Marte',
+      label: 'Marte',
     },
     {
-      value: 'Nárnia',
-      label: 'Nárnia',
+      value: 'Mercúrio',
+      label: 'Mercúrio',
     },
     {
-      value: 'Gilead',
-      label: 'Gilead',
+      value: 'Venus',
+      label: 'Venus',
     },
     {
-      value: 'País das maravilhas',
-      label: 'País das maravilhas',
+      value: 'Terra',
+      label: 'Terra',
     },
     {
-        value: 'OZ',
-        label: 'OZ',
+        value: 'Jupiter',
+        label: 'Jupiter',
     },
     {
-        value: 'Duna',
-        label: 'Duna',
+        value: 'Saturno',
+        label: 'Saturno',
     },
     {
-        value: 'Winterfell',
-        label: 'Winterfell',
+        value: 'Urano',
+        label: 'Urano',
     },
     {
-        value: 'Terra média',
-        label: 'Terra média',
+        value: 'Netuno',
+        label: 'Netuno',
     },
     {
-        value: 'Hogwarts',
-        label: 'Hogwarts',
-    },
-    {
-        value: 'Acampamento meio sangue',
-        label: 'Acampamento meio sangue',
-    },
-    {
-        value: 'A fantástica fábrica de chocolate',
-        label: 'A fantástica fábrica de chocolate',
-    },
-    {
-        value: 'Avonlea',
-        label: 'Avonlea',
-    },
-    {
-        value: 'Gothan city',
-        label: 'Gothan city',
-    },
-    {
-        value: 'Jurrasic park',
-        label: 'Jurrasic park',
-    },
-    {
-        value: 'Asgard',
-        label: 'Asgard',
-    },
-    {
-        value: 'Gringotts',
-        label: 'Gringotts',
+        value: 'Plutão',
+        label: 'Plutão',
     },
   ];
   
