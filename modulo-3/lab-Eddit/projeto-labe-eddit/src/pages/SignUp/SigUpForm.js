@@ -4,18 +4,29 @@ import { goToLogin } from "../../rotes/Coordinator";
 import { useHistory } from "react-router";
 import {signUp} from "../../components/Requests";
 // import { useUnprotectedPage } from "../../hooks/useProtectedPage";
+import { IconButton, InputAdornment } from "@material-ui/core";
+import { Visibility, VisibilityOff } from "@material-ui/icons";
+import { useState } from "react";
 
 
 const SignUpForm= () => {
   // useUnprotectedPage()
     const history = useHistory()
     const [form, onChange, clear] = useForm({username:'', email:'', password:''})
+    const [showPassWord, setPassWord] = useState(true);
 
     const submitForm = (e) => {
       console.log(form)
       e.preventDefault();
       signUp(form, clear, history)
   }
+
+  const handleClickShowPassword = () => {
+    setPassWord(!showPassWord);
+  };
+   const handleMouseDownPassword = () => {
+    setPassWord(!showPassWord);
+  };
 
     return(
 
@@ -52,10 +63,23 @@ const SignUpForm= () => {
                 onChange={onChange}
                 placeholder="Senha"
                 variant={'outlined'}
-                type='password'
+                type={!showPassWord ? "password" : "text" }
                 label={'Senha'}
                 fullWidth
                 margin={'normal'}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                      >
+                        {showPassWord ? <Visibility /> : <VisibilityOff />}
+                      </IconButton>
+                    </InputAdornment>
+                  )
+                }}
                 />
                   <Fab 
                   type="submit"
