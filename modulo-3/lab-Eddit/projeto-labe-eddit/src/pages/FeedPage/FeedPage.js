@@ -1,7 +1,6 @@
 import { useHistory } from "react-router";
 import Header from "../../components/header/Header";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
-import { goToLogin } from "../../rotes/Coordinator";
 import { DivFeed, NavBar, News, Posts } from "./Styled-Feed";
 
 const FeedPage = () => {
@@ -20,7 +19,7 @@ const FeedPage = () => {
             <News>
                 <div>
                     <input placeholder={"Pesquise aqui"}></input>
-                    <button onClick={() => (goToLogin(history))}>logout</button>
+                
              
                 </div>
                 <div>news</div>

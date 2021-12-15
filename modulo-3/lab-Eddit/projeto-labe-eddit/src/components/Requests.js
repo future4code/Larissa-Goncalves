@@ -14,7 +14,7 @@ import { goToFeed } from "../rotes/Coordinator";
       })
       .catch((err) => {
         console.log(err.message)
-        alert('Senha ou email incorreto, tente novamente')
+        alert('Houve um erro!', err.response.data.message)
        
       })
     }
