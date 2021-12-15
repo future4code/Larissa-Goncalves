@@ -1,8 +1,15 @@
+import SignUpForm from "./SigUpForm";
+import { DivSignUp } from "./Styled-signUp";
+
 const SignUpPage = () => {
     return(
-        <div>
-        SignUpPage
-    </div>
+        <DivSignUp>
+            <div>image</div>
+            <div> 
+                cadastre-se
+                <SignUpForm/></div>
+      
+    </DivSignUp>
 
     )
    

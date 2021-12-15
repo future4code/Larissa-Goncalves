@@ -1,8 +1,17 @@
+import { DivLogin } from "./Styled-login";
+import LoginForm from "./LoginForm";
+
+
 const LoginPage = () => {
+    
     return(
-        <div>
-        loginPage
-    </div>
+        <DivLogin>
+            <div>imagem</div>
+            <div> 
+                faça login
+                <LoginForm/>
+            </div>
+    </DivLogin>
 
     )
    

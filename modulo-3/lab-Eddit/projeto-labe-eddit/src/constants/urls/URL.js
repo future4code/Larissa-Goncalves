@@ -1,1 +1,2 @@
-export const BASE_URL = "https://labeddit.herokuapp.com"
+export const url_base = 'https://labeddit.herokuapp.com'
+
