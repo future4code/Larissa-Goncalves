@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route} from "react-router-dom";
 import FeedPage from "../pages/FeedPage/FeedPage"
 import LoginPage from "../pages/LoginPage/LoginPage";
-import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Error from "../components/Error"
 import SignUpPage from "../pages/SignUp/SignUpPage";
 import PostPage from "../pages/PostPage/PostPage";
 import CommitPage from "../pages/CommitPage/CommitPage"
@@ -26,7 +26,7 @@ const Routes = () => {
                 <SignUpPage/>
             </Route>
             <Route>
-                <ErrorPage/>
+                <Error/>
             </Route>
             
           

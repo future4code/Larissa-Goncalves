@@ -7,6 +7,7 @@ import {signUp} from "../../components/Requests";
 import { IconButton, InputAdornment } from "@material-ui/core";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
 import { useState } from "react";
+import { CircularProgress } from "@mui/material";
 
 
 const SignUpForm= () => {
@@ -14,11 +15,12 @@ const SignUpForm= () => {
     const history = useHistory()
     const [form, onChange, clear] = useForm({username:'', email:'', password:''})
     const [showPassWord, setPassWord] = useState(true);
+    const [loading, setLoading] = useState(false)
 
     const submitForm = (e) => {
       console.log(form)
       e.preventDefault();
-      signUp(form, clear, history)
+      signUp(form, clear, history, setLoading)
   }
 
   const handleClickShowPassword = () => {
@@ -88,7 +90,7 @@ const SignUpForm= () => {
                 fullWidth
                 size='medium'
                 color='secondary'
-                > cadastrar-se </Fab>
+                >{ loading ? <CircularProgress size={24}/> :  <>cadastrar-se </>} </Fab>
                   <Button 
                 onClick={() => goToLogin(history)}
                 variant={'text'}

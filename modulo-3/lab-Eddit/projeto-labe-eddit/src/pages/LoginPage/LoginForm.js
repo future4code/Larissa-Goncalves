@@ -7,16 +7,18 @@ import { useUnprotectedPage } from "../../hooks/useProtectedPage";
 import { IconButton, InputAdornment } from "@material-ui/core";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
 import { useState } from "react";
+import { CircularProgress } from "@mui/material";
 
 const LoginForm = () => {
     useUnprotectedPage()
     const history = useHistory()
     const [form, onChange, clear] = useForm({email:'', password:''})
     const [showPassWord, setPassWord] = useState(true);
+    const [loading, setLoading] = useState(false)
  
     const submitForm = (e) => {
         e.preventDefault();
-        login(form, clear, history);
+        login(form, clear, history, setLoading);
     }
 
      const handleClickShowPassword = () => {
@@ -74,15 +76,15 @@ const LoginForm = () => {
                 fullWidth
                 size='medium'
                 color='secondary'
-                > Entrar </Fab>
+                >{loading ? <CircularProgress size={24}/> : <>Entrar</>} </Fab>
                   <Button 
                 onClick={() => goToSignUp(history)}
                 variant={'text'}
                 fullWidth
                 size='medium'
                 color='secondary'
-                > 
-                ou cadastra-se
+                > ou cadastre-se
+                
                 </Button>
                 </form>
                 
