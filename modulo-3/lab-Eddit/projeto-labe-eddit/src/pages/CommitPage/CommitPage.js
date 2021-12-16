@@ -16,6 +16,11 @@ import { TextField } from "@material-ui/core";
 import useForm from "../../hooks/useForm";
 import { createCommit } from "../../components/Requests";
 import Vote from "../../components/Vote";
+import axios from 'axios';
+import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
+import ArrowDownwardOutlinedIcon from '@mui/icons-material/ArrowDownwardOutlined';
+import IconButton from '@mui/material/IconButton';
+import { useEffect } from "react";
 
 
 const CommitPage = () => {
@@ -26,7 +31,6 @@ const CommitPage = () => {
     const [form, onChange, clear] = useForm({body: ''})
     console.log(commits)
     
-
     var corlorRandom = () => {
         return "#" + Math.floor(Math.random() * 16777215).toString(16);
       };
@@ -36,6 +40,68 @@ const CommitPage = () => {
           createCommit(form, params, clear)
 
       }
+
+  const createPostVote = (commits) => {
+    const body = {
+        direction: 1,
+    };
+    axios.post(`${url_base}/comments/${commits.id}/votes`, body, 
+    {
+      headers:{
+        Authorization: localStorage.getItem('token')
+      },
+    })
+      .then((res) => {
+        console.log(res.data)
+        alert(`Você votou +1 no cometário de ${commits.username}`)
+      })
+      .catch((err) => {
+        console.log(err.data)
+
+      })
+  }
+
+  const changePostVote = (commits) => {
+    const body = {
+      direction: -1,
+    }
+    axios.put(`${url_base}/comments/${commits.id}/votes`, body,{
+      headers:{
+        Authorization: localStorage.getItem('token')
+      },
+    })
+    .then((res) => {
+      alert(`Você votou -1 no cometário de ${commits.username}`)
+      console.log(res.data)
+    })
+    .catch((err) => {
+      console.log(err.data)
+
+    })
+  }
+
+  const deletePostVote = (commits) => {
+    const body = {
+      direction: 0,
+    }
+    axios.delete(`${url_base}/comments/${commits.id}/votes`, body, {
+      headers:{
+        Authorization: localStorage.getItem('token')
+      },
+    })
+    .then((res) => {
+      alert(`Você tirou o seu voto do cometário de ${commits.username}`)
+      console.log(res.data)
+    })
+    .catch((err) => {
+    console.log(err.data)
+    })
+  }
+
+
+
+
+
     const getPostComments = commits && commits.map((commits) => {
         const userFirstLetter = () => {
             const firstLetter = commits.username && commits.username.substr(0, 1);
@@ -54,7 +120,13 @@ const CommitPage = () => {
               <h3>{commits.body}</h3>
               </Typography>
               <CardActions disableSpacing>
-              <Vote/>
+              <IconButton aria-label="add to favorites" margin-left={'10px'} onClick={() => changePostVote(commits) } >
+               <ArrowDownwardOutlinedIcon color='error' />
+              </IconButton>
+              {commits.voteSum}
+                 <IconButton aria-label="share" onClick={() => createPostVote(commits)}>
+                   <ArrowUpwardOutlinedIcon color='primary' />
+                  </IconButton>
 
               </CardActions>
           </Card>
