@@ -33,3 +33,39 @@ import { goToFeed } from "../rotes/Coordinator";
         alert('algo deu errado, tente novamente')
       })
     }
+
+    export const createPost = (body, clear) => {
+      axios.post(`${url_base}/posts`, body, {
+          headers: {
+              Authorization: localStorage.getItem("token")
+          }
+      })
+      .then((res) => {
+        alert("Post Criado com sucesso")
+        console.log(res.data)
+        clear()
+        
+      })
+      .catch((err) => {
+        console.log(err)
+
+      })
+    }
+
+    export const createCommit = (body, params, clear) => {
+      axios.post(`${url_base}/posts/${params.id}/comments`, body,{
+          headers:{
+              Authorization: localStorage.getItem("token")
+          }
+      })
+      .then((res) => {
+          console.log(res)
+          alert(res.data)
+          clear()
+          
+
+      }).catch((err) => {
+          console.log(err)
+
+      })
+  }

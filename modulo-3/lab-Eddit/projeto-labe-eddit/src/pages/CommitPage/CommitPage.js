@@ -16,18 +16,28 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import Avatar from '@mui/material/Avatar';
 import { TextField } from "@material-ui/core";
+import useForm from "../../hooks/useForm";
+import { createCommit } from "../../components/Requests";
+
 
 const CommitPage = () => {
     useProtectedPage()
     const history = useHistory()
     const params = useParams()
     const commits = useRequestData([], `${url_base}/posts/${params.id}/comments`)
+    const [form, onChange, clear] = useForm({body: ''})
     console.log(commits)
+    
 
     var corlorRandom = () => {
         return "#" + Math.floor(Math.random() * 16777215).toString(16);
       };
 
+      const onSubmitFormComments = (e) => {
+          e.preventDefault()
+          createCommit(form, params, clear)
+
+      }
     const getPostComments = commits && commits.map((commits) => {
         return(
           <Card key={commits.id } sx={{ maxWidth: 900 }}>
@@ -63,14 +73,22 @@ const CommitPage = () => {
             
             </div>
             <div>
-             <TextField
-             placeholder={'Faça um comentario'}
-             variant={'outlined'}
-             type='text'
-             fullWidth
-             />
-             
-             <button>commit</button>
+                <form onSubmit={onSubmitFormComments}>
+                <TextField
+                placeholder={'Faça um comentario'}
+                variant={'outlined'}
+                type='text'
+                name='body'
+                value={form.body}
+                onChange={onChange}
+                fullWidth
+                />
+             <button
+             type='submit'
+             >commit</button>
+
+                </form>
+            
             </div>
             <div>
              rederiza comits

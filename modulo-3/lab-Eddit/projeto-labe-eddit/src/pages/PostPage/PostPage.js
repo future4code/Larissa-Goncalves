@@ -1,27 +1,35 @@
 import { Fab, TextField } from "@mui/material";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
+import useForm from "../../hooks/useForm"
+import {createPost} from "../../components/Requests"
+
 
 const PostPage = () => {
     useProtectedPage()
+    const [form, onChange, clear] = useForm({title: '', body: ''})
+    
+    const  onSubmitFormPost = (e) => {
+        e.preventDefault()
+        createPost(form, clear)
+        
+    }
     return(
         <div>
-            {/* <form onSubmit={}> */}
+            <form onSubmit={onSubmitFormPost}>
         Faça uma postagem para o amigos.
         <TextField 
-        required
         name='title'
-        // value={form.title}
-        // onChange={onChange}
+        value={form.title}
+        onChange={onChange}
         placeholder="de um titulo para a sua postagem"
         variant={'outlined'}
         type='text'
         fullWidth
        />
         <TextField
-        required
         name='body'
-        // value={form.body}
-        // onChange={onChange}
+        value={form.body}
+        onChange={onChange}
         placeholder="o que está acontecendo?"
         variant={'outlined'}
         type='text'
@@ -32,9 +40,9 @@ const PostPage = () => {
                 aria-label='add'
                 fullWidth
                 size='medium'
-                color='secondary'
+               
                 >Postar </Fab>
-        {/* </form> */}
+        </form>
     </div>
     )
    
