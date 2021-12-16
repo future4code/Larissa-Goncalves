@@ -1,6 +1,7 @@
 import axios from "axios";
 import {url_base} from "../constants/urls/URL";
 import { goToFeed } from "../rotes/Coordinator";
+import { useEffect } from "react";
 
    export const login = (body, clear, history, setLoading) => {
      setLoading(true)
@@ -52,6 +53,7 @@ import { goToFeed } from "../rotes/Coordinator";
         console.log(res.data)
         clear()
         
+        
       })
       .catch((err) => {
         console.log(err)
@@ -69,6 +71,7 @@ import { goToFeed } from "../rotes/Coordinator";
           console.log(res)
           alert(res.data)
           clear()
+          
           
 
       }).catch((err) => {

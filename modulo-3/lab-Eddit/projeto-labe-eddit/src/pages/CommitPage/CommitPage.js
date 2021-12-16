@@ -6,9 +6,6 @@ import { goToFeed } from "../../rotes/Coordinator";
 import { useHistory, useParams } from "react-router";
 import useRequestData from "../../hooks/useRequestData"
 import { url_base } from "../../constants/urls/URL";
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import CardHeader from '@mui/material/CardHeader';
 import CardActions from '@mui/material/CardActions';
@@ -18,6 +15,7 @@ import Avatar from '@mui/material/Avatar';
 import { TextField } from "@material-ui/core";
 import useForm from "../../hooks/useForm";
 import { createCommit } from "../../components/Requests";
+import Vote from "../../components/Vote";
 
 
 const CommitPage = () => {
@@ -39,11 +37,15 @@ const CommitPage = () => {
 
       }
     const getPostComments = commits && commits.map((commits) => {
+        const userFirstLetter = () => {
+            const firstLetter = commits.username && commits.username.substr(0, 1);
+            return commits.username && firstLetter.toUpperCase();
+          };
         return(
           <Card key={commits.id } sx={{ maxWidth: 900 }}>
               <CardHeader
               avatar={
-                <Avatar sx={{ bgcolor: corlorRandom() }} aria-label="recipe">B</Avatar>
+                <Avatar sx={{ bgcolor: corlorRandom() }} aria-label="recipe">{userFirstLetter()}</Avatar>
               }
               title={commits.username}
               subheader={commits.createdAt}
@@ -52,12 +54,7 @@ const CommitPage = () => {
               <h3>{commits.body}</h3>
               </Typography>
               <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-               <FavoriteIcon />
-              </IconButton>
-                   <IconButton aria-label="share">
-                   <ShareIcon />
-                  </IconButton>
+              <Vote/>
 
               </CardActions>
           </Card>

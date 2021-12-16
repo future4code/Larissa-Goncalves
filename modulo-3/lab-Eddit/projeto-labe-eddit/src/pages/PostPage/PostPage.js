@@ -2,9 +2,10 @@ import { Fab, TextField } from "@mui/material";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import useForm from "../../hooks/useForm"
 import {createPost} from "../../components/Requests"
+import { useEffect } from "react";
 
 
-const PostPage = () => {
+const PostPage = (props) => {
     useProtectedPage()
     const [form, onChange, clear] = useForm({title: '', body: ''})
     
@@ -13,6 +14,8 @@ const PostPage = () => {
         createPost(form, clear)
         
     }
+
+
     return(
         <div>
             <form onSubmit={onSubmitFormPost}>

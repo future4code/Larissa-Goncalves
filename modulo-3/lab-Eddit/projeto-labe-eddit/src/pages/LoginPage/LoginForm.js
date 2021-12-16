@@ -24,10 +24,6 @@ const LoginForm = () => {
      const handleClickShowPassword = () => {
       setPassWord(!showPassWord);
     };
-     const handleMouseDownPassword = () => {
-      setPassWord(!showPassWord);
-    };
-
     return(
         <div>
                 <form onSubmit={submitForm}>
@@ -60,7 +56,7 @@ const LoginForm = () => {
                       <IconButton
                         aria-label="toggle password visibility"
                         onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
+                        onMouseDown={handleClickShowPassword}
                       >
                         {showPassWord ? <Visibility /> : <VisibilityOff />}
                       </IconButton>
