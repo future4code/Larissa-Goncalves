@@ -13,3 +13,7 @@ export const goToPost = (history, id) => {
 export const goToSignUp = (history) => {
     history.push("/cadastro")
 }
+
+export const goToCommit = (history, id) => {
+    history.push(`/comentarios/${id}`)
+}

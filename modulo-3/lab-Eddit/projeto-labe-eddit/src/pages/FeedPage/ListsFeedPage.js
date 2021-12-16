@@ -1,10 +1,7 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -14,19 +11,30 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import useRequestData from '../../hooks/useRequestData';
 import { url_base } from '../../constants/urls/URL';
-import { typography } from '@mui/system';
+import { goToCommit } from '../../rotes/Coordinator';
+import { useHistory } from 'react-router';
+
 
 const RecipeReviewCard = () =>  {
   const getPosts = useRequestData([], `${url_base}/posts`)
+  const history = useHistory()
  
   console.log(getPosts)
+
+  var corlorRandom = () => {
+    return "#" + Math.floor(Math.random() * 16777215).toString(16);
+  };
+
+  const onClickCard = (id) => {
+    goToCommit(history, id);
+  };
 
   const getPostPeoples = getPosts.map((posts) => {
       return(
           <Card key={posts.id } sx={{ maxWidth: 900 }}>
             <CardHeader
              avatar={
-               <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">LT</Avatar>
+               <Avatar sx={{ bgcolor: corlorRandom() }} aria-label="recipe">B</Avatar>
              }
              title={posts.username}
              subheader={posts.createdAt}
@@ -42,8 +50,8 @@ const RecipeReviewCard = () =>  {
                    <IconButton aria-label="share">
                    <ShareIcon />
                   </IconButton>
-                  <IconButton aria-label="commits">
-                   <ExpandMoreIcon /> {posts.commentCount}
+                  <IconButton aria-label="commits" onClick={() => onClickCard(posts.id)}>
+                   <ExpandMoreIcon/> {posts.commentCount}
                   </IconButton>
                  </CardActions>
           </Card>

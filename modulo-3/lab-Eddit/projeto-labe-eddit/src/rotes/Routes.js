@@ -4,6 +4,7 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import SignUpPage from "../pages/SignUp/SignUpPage";
 import PostPage from "../pages/PostPage/PostPage";
+import CommitPage from "../pages/CommitPage/CommitPage"
 
 const Routes = () => {
     return(
@@ -17,6 +18,9 @@ const Routes = () => {
             </Route>
             <Route exact path="/Postagem/:id">
                 <PostPage/>
+            </Route>
+            <Route exact path="/comentarios/:id">
+                <CommitPage/>
             </Route>
             <Route exact path="/cadastro">
                 <SignUpPage/>

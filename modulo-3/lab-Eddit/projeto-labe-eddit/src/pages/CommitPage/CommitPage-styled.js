@@ -13,12 +13,12 @@ export const DivFeed = styled.div`
 
 export const DivCreatePost = styled.div`
     height: 220px;
-  
+    background-color:pink;
 `
 export const Posts = styled.div`
      height: 100vh;
     display: grid;
-    grid-template-rows:0.1fr 0.3fr;
+    grid-template-rows:0.1fr 0.3fr 1fr;
  `
 
 export const NavBar = styled.div`
@@ -31,8 +31,4 @@ export const News = styled.div`
     grid-template-rows:0.5fr 3fr 2fr; */
     margin-right:37%;
 `
-export const DivHeaderFixed = styled.div`
-    height:86px;
-    
-    
-    `
+
