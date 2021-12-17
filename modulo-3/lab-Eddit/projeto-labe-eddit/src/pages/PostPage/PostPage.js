@@ -3,6 +3,7 @@ import { useProtectedPage } from "../../hooks/useProtectedPage";
 import useForm from "../../hooks/useForm"
 import {createPost} from "../../components/Requests"
 import { useEffect } from "react";
+import { DivInput, ButtonInput} from "./Styled-post";
 
 
 const PostPage = (props) => {
@@ -17,9 +18,8 @@ const PostPage = (props) => {
 
 
     return(
-        <div>
+        <DivInput>
             <form onSubmit={onSubmitFormPost}>
-        Faça uma postagem para o amigos.
         <TextField 
         name='title'
         value={form.title}
@@ -37,7 +37,8 @@ const PostPage = (props) => {
         variant={'outlined'}
         type='text'
         fullWidth/>
-            <Fab
+           <ButtonInput>
+        <Fab
                   type="submit"
                 variant={'extended'}
                 aria-label='add'
@@ -45,8 +46,9 @@ const PostPage = (props) => {
                 size='medium'
                
                 >Postar </Fab>
+        </ButtonInput>
         </form>
-    </div>
+    </DivInput>
     )
    
 }

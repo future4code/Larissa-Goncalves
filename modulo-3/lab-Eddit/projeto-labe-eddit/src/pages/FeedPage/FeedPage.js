@@ -1,6 +1,6 @@
 import Header from "../../components/header/Header";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
-import { DivFeed, NavBar, News, Posts, DivHeaderFixed, DivCreatePost } from "./Styled-Feed";
+import { DivFeed, NavBar, News, Posts, DivHeaderFixed, DivCreatePost, DivListPost } from "./Styled-Feed";
 import ListFeedPage from "./ListsFeedPage"
 import NavBarPage from "../../components/navBar/NavBar";
 import NewsPage from "../../components/News/NewsPage";
@@ -11,19 +11,21 @@ const FeedPage = () => {
     useProtectedPage()   
     return(
         <DivFeed>
-            <NavBar><NavBarPage/></NavBar>
+            <NavBar>
+                {/* <NavBarPage/> */}
+            </NavBar>
             <Posts>
                 <DivHeaderFixed><Header/></DivHeaderFixed>
                 <DivCreatePost><PostPage/></DivCreatePost>
-                <div>
+                <DivListPost>
 
                     <ListFeedPage/>
                     
-                </div>
+                </DivListPost>
             </Posts>
-            <News>
+            {/* <News>
                 <NewsPage/>
-            </News>
+            </News> */}
     </DivFeed>
     )
   

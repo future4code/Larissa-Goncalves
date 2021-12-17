@@ -22,7 +22,7 @@ const RecipeReviewCard = () =>  {
   const getPosts = useRequestData([], `${url_base}/posts`)
   const history = useHistory()
 
-  
+
   const createPostVote = (posts) => {
     const body = {
         direction: 1,
@@ -67,10 +67,7 @@ const RecipeReviewCard = () =>  {
   }
 
   const deletePostVote = (posts) => {
-    const body = {
-      direction: 0,
-    }
-    axios.delete(`${url_base}/posts/${posts.id}/votes`, body, {
+    axios.delete(`${url_base}/posts/${posts.id}/votes`, {
       headers:{
         Authorization: localStorage.getItem('token')
       },
@@ -78,6 +75,7 @@ const RecipeReviewCard = () =>  {
     .then((res) => {
       alert(`Você tirou o seu voto do post de ${posts.username}`)
       console.log(res.data)
+      
     })
     .catch((err) => {
     console.log(err.data)
@@ -112,7 +110,7 @@ const RecipeReviewCard = () =>  {
                  </Typography>
                  <CardActions >
                  {/* <Vote/> */}
-                 <IconButton aria-label="add to favorites" margin-left={'10px'} onClick={() => changePostVote(posts) } >
+                 <IconButton aria-label="add to favorites" margin-left={'10px'} onClick={() => changePostVote(posts)} >
                <ArrowDownwardOutlinedIcon color='error' />
               </IconButton>
               {posts.voteSum}
@@ -122,7 +120,7 @@ const RecipeReviewCard = () =>  {
                 
                   <IconButton aria-label="commits" onClick={() => onClickCard(posts.id)}>
                    <QuestionAnswerOutlinedIcon/> 
-                   {posts.commentCount === "1" ? (<>{posts.commentCount}</>) : ('0')}
+                   {posts.commentCount === '1' ? (<>{posts.commentCount}</>) : ('0')}
                   </IconButton>
                   
                  </CardActions>

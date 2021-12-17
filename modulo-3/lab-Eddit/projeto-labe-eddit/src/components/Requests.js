@@ -1,25 +1,37 @@
 import axios from "axios";
 import {url_base} from "../constants/urls/URL";
 import { goToFeed } from "../rotes/Coordinator";
-import { useEffect } from "react";
+import swal from "sweetalert"
 
    export const login = (body, clear, history, setLoading) => {
      setLoading(true)
       axios.post(`${url_base}/users/login`, body)
       .then((res) => {
+        
         localStorage.setItem("token", res.data.token)
-        alert("Você está logado, seja bem vindo")
+      
+        // alert("Você está logado, seja bem vindo")
         clear()
         setLoading(false)
+       
         goToFeed(history)
-        
-      
+        swal({
+          title: "Bem vindo!",
+          text: "Você está logado!",
+          icon: "success",
+        });
+
         console.log(res.data)
       })
       .catch((err) => {
         setLoading(false)
-        console.log(err.message)
-        alert('Houve um erro!', err.response.data.message)
+        
+        // alert('Houve um erro!', err.response.data.message)
+        swal({
+          title: "Houve um erro!",
+          text: 'tente novamente',
+          icon: "error",
+        });
        
       })
     }
@@ -29,16 +41,25 @@ import { useEffect } from "react";
       axios.post(`${url_base}/users/signup`, body)
       .then((res) => {
         localStorage.setItem("token", res.data.token)
-        alert("Você foi cadastrado com sucesso!")
+        
         clear()
         setLoading(false)
+        swal({
+          title: "Cadastro realizado com sucesso",
+          text: "Aproveite!",
+          icon: "success",
+        });
         goToFeed(history)
         console.log(res.data)
       })
       .catch((err) => {
         setLoading(false)
         console.log(err.message)
-        alert(err)
+        swal({
+          title: "Houve um erro!",
+          text: 'tente novamente',
+          icon: "error",
+        });
       })
     }
 

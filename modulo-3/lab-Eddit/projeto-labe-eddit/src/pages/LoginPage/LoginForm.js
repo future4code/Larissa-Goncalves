@@ -8,6 +8,7 @@ import { IconButton, InputAdornment } from "@material-ui/core";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
 import { useState } from "react";
 import { CircularProgress } from "@mui/material";
+import { DivInput, Text } from "./Styled-login";
 
 const LoginForm = () => {
     useUnprotectedPage()
@@ -26,6 +27,7 @@ const LoginForm = () => {
     };
     return(
         <div>
+          <Text>Bem vindo de volta</Text>
                 <form onSubmit={submitForm}>
                 <TextField 
                 required
@@ -36,10 +38,11 @@ const LoginForm = () => {
                 variant={'outlined'}
                 type='email'
                 label={'Email'}
-                fullWidth
                 margin={'normal'}
+                fullWidth
                 />
                 <TextField 
+                 fullWidth
                 required
                 name='password'
                 value={form.password}
@@ -48,7 +51,7 @@ const LoginForm = () => {
                 variant={'outlined'}
                 type={!showPassWord ? "password" : "text" }
                 label={'Senha'}
-                fullWidth
+                
                 margin={'normal'}
                 InputProps={{
                   endAdornment: (
@@ -65,23 +68,14 @@ const LoginForm = () => {
                 }}
                 
                 />
-                  <Fab 
+                  <Button
                   type="submit"
-                variant={'extended'}
+                variant={'contained'}
                 aria-label='add'
                 fullWidth
                 size='medium'
                 color='secondary'
-                >{loading ? <CircularProgress size={24}/> : <>Entrar</>} </Fab>
-                  <Button 
-                onClick={() => goToSignUp(history)}
-                variant={'text'}
-                fullWidth
-                size='medium'
-                color='secondary'
-                > ou cadastre-se
-                
-                </Button>
+                >{loading ? <CircularProgress size={24}/> : <>Entrar</>} </Button>
                 </form>
                 
 

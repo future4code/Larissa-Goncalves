@@ -8,6 +8,7 @@ import { IconButton, InputAdornment } from "@material-ui/core";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
 import { useState } from "react";
 import { CircularProgress } from "@mui/material";
+import { DivInput, Text } from "../LoginPage/Styled-login";
 
 
 const SignUpForm= () => {
@@ -33,6 +34,7 @@ const SignUpForm= () => {
     return(
 
         <div>
+          <Text>Crie uma nova conta</Text>
              <form onSubmit={submitForm}>
              <TextField 
                 required
@@ -47,6 +49,7 @@ const SignUpForm= () => {
                 margin={'normal'}
                 />
                 <TextField 
+                fullWidth
                 required
                 name='email'
                 value={form.email}
@@ -55,7 +58,6 @@ const SignUpForm= () => {
                 variant={'outlined'}
                 type='email'
                 label={'Email'}
-                fullWidth
                 margin={'normal'}
                 />
                 <TextField 
@@ -83,23 +85,14 @@ const SignUpForm= () => {
                   )
                 }}
                 />
-                  <Fab 
+                  <Button
                   type="submit"
-                variant={'extended'}
+                variant={'contained'}
                 aria-label='add'
                 fullWidth
                 size='medium'
                 color='secondary'
-                >{ loading ? <CircularProgress size={24}/> :  <>cadastrar-se </>} </Fab>
-                  <Button 
-                onClick={() => goToLogin(history)}
-                variant={'text'}
-                fullWidth
-                size='medium'
-                color='secondary'
-                > 
-                Voltar ao login?
-                </Button>
+                >{ loading ? <CircularProgress size={24}/> :  <>cadastrar-se </>} </Button>
                 </form>
               
            
