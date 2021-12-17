@@ -4,6 +4,7 @@ import { useHistory} from "react-router";
 import swal from "sweetalert"
 import { Button, Fab, IconButton } from "@mui/material";
 import BlockOutlinedIcon from '@mui/icons-material/BlockOutlined';
+import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 
 
 const Header = () => {
@@ -17,7 +18,7 @@ const Header = () => {
         <DivHeader>
             <h3>Página Inicial</h3>
             <IconButton aria-label="share" onClick={() => goToLogout(history)}>
-                   <BlockOutlinedIcon color='error' />
+                   <ExitToAppOutlinedIcon color='secondary' />
                   </IconButton>
             {/* <button>
                 <Brightness4OutlinedIcon/>

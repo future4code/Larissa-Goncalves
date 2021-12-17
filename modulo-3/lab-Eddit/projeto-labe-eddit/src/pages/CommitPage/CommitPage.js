@@ -134,7 +134,7 @@ const CommitPage = () => {
     })
     return(
         <DivFeed>
-        <NavBar><NavBarPage/></NavBar>
+        {/* <NavBar><NavBarPage/></NavBar> */}
         <Posts>
             <div>
             <button onClick={() => goToFeed(history)}>Voltar</button>
@@ -165,9 +165,9 @@ const CommitPage = () => {
             </div>
             
         </Posts>
-        <News>
+        {/* <News>
             <NewsPage/>
-        </News>
+        </News> */}
 </DivFeed>
     )
 }

@@ -16,6 +16,7 @@ import axios from 'axios';
 import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
 import ArrowDownwardOutlinedIcon from '@mui/icons-material/ArrowDownwardOutlined';
 import { useEffect } from 'react';
+import {DivListPost} from "./Styled-Feed"
 
 
 const RecipeReviewCard = () =>  {
@@ -96,7 +97,8 @@ const RecipeReviewCard = () =>  {
       return posts.username && firstLetter.toUpperCase();
     };
       return(
-          <Card key={posts.id } sx={{ maxWidth: 900 }}>
+        <DivListPost>
+          <Card key={posts.id } sx={{ maxWidth: 900 }} >
             <CardHeader
              avatar={
                <Avatar sx={{ bgcolor: corlorRandom() }} aria-label="recipe">{userFirstLetter()}</Avatar>
@@ -125,6 +127,7 @@ const RecipeReviewCard = () =>  {
                   
                  </CardActions>
           </Card>
+          </DivListPost>
       )
   })
  

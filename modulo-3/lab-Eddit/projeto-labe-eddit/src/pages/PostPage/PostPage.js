@@ -1,4 +1,4 @@
-import { Fab, TextField } from "@mui/material";
+import { Button, Fab, TextField } from "@mui/material";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import useForm from "../../hooks/useForm"
 import {createPost} from "../../components/Requests"
@@ -24,8 +24,9 @@ const PostPage = (props) => {
         name='title'
         value={form.title}
         onChange={onChange}
-        placeholder="de um titulo para a sua postagem"
+        placeholder="De um titulo para a sua postagem"
         variant={'outlined'}
+        border={'none'}
         type='text'
         fullWidth
        />
@@ -33,19 +34,20 @@ const PostPage = (props) => {
         name='body'
         value={form.body}
         onChange={onChange}
-        placeholder="o que está acontecendo?"
+        placeholder="O que está acontecendo?"
         variant={'outlined'}
         type='text'
         fullWidth/>
            <ButtonInput>
-        <Fab
+        <Button
                   type="submit"
-                variant={'extended'}
+                variant={'contained'}
                 aria-label='add'
                 fullWidth
                 size='medium'
+                color="secondary"
                
-                >Postar </Fab>
+                >Postar </Button>
         </ButtonInput>
         </form>
     </DivInput>

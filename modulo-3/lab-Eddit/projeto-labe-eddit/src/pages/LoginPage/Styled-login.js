@@ -3,14 +3,23 @@ import styled from "styled-components"
 export const DivLogin = styled.div`
     display:grid;
     grid-template-columns: 0.6fr 1fr;
-    height:100vh;
-    
+    max-height:100vh; 
+    max-width:400vw;   
 `
 export const Image = styled.div`
     display:grid;
-    margin: 20px;
+    margin: 2%;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    min-width: 100%;
+    @media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    max-width: 200px;
+
+
+
+    
+            
+}
     `
 export const Div1 = styled.div`
     background-color:#befcc9;
@@ -71,8 +80,22 @@ export const DivHandleInput = styled.div`
      flex-direction: column;
      margin-top: 10%;
     align-items: center; 
+    @media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    border: solid;
+    min-height: 100%;
+    min-width: 100%;
+    background: white;
+    
+
+            
+}
 
 `
 export const Text = styled.h1`
  color:#c5cacf;
 `
+
+
+
+
+

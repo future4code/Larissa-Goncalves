@@ -6,26 +6,20 @@ import NavBarPage from "../../components/navBar/NavBar";
 import NewsPage from "../../components/News/NewsPage";
 import CommitPage from "../CommitPage/CommitPage";
 import PostPage from "../PostPage/PostPage";
+import { useState } from "react";
 
 const FeedPage = () => {
     useProtectedPage()   
+
     return(
         <DivFeed>
-            <NavBar>
-                {/* <NavBarPage/> */}
-            </NavBar>
             <Posts>
                 <DivHeaderFixed><Header/></DivHeaderFixed>
                 <DivCreatePost><PostPage/></DivCreatePost>
-                <DivListPost>
-
-                    <ListFeedPage/>
-                    
-                </DivListPost>
-            </Posts>
-            {/* <News>
-                <NewsPage/>
-            </News> */}
+                <div>
+                   <ListFeedPage/>
+                </div>
+                </Posts>
     </DivFeed>
     )
   

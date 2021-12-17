@@ -7,7 +7,7 @@ export const DivFeed = styled.div`
    
 
     div{
-        border:solid 1px;
+        border:solid 1px #c5cacf;
     }
 `
 
