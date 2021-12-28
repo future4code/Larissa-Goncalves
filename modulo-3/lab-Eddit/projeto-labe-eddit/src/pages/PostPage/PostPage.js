@@ -1,24 +1,18 @@
-import { Button, Fab, TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import useForm from "../../hooks/useForm"
 import {createPost} from "../../components/Requests"
-import { useEffect } from "react";
-import { DivInput, ButtonInput} from "./Styled-post";
 
-
-const PostPage = (props) => {
+const PostPage = () => {
     useProtectedPage()
     const [form, onChange, clear] = useForm({title: '', body: ''})
     
     const  onSubmitFormPost = (e) => {
         e.preventDefault()
         createPost(form, clear)
-        
     }
-
-
     return(
-        <DivInput>
+        <div>
             <form onSubmit={onSubmitFormPost}>
         <TextField 
         name='title'
@@ -38,21 +32,18 @@ const PostPage = (props) => {
         variant={'outlined'}
         type='text'
         fullWidth/>
-           <ButtonInput>
+           <div>
         <Button
-                  type="submit"
-                variant={'contained'}
-                aria-label='add'
-                fullWidth
-                size='medium'
-                color="secondary"
-               
-                >Postar </Button>
-        </ButtonInput>
+        type="submit"
+        variant={'contained'}
+        aria-label='add'
+        fullWidth
+        size='medium'
+        color="secondary"
+        >Postar </Button>
+        </div>
         </form>
-    </DivInput>
+    </div>
     )
-   
 }
-
 export default PostPage;

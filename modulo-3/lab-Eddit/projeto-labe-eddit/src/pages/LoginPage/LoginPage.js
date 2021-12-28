@@ -8,6 +8,7 @@ import Animation4 from "../../components/animation/Animation4.json"
 import { useState } from "react";
 import SignUpForm from "../SignUp/SigUpForm";
 import { Button } from "@material-ui/core";
+
 const LoginPage = () => {
     const [inicialState, setInicialState] = useState(true)
 
@@ -18,7 +19,6 @@ const LoginPage = () => {
     const handleClickTrue = () => {
         setInicialState(true);
       };
-
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -27,7 +27,6 @@ const LoginPage = () => {
         preserveAspectRatio: 'xMidYmid slice'
         }
     };
-
     const defaultOptions2 = {
         loop: true,
         autoplay: true,
@@ -36,7 +35,6 @@ const LoginPage = () => {
         preserveAspectRatio: 'xMidYmid slice'
         }
     };
-
     const defaultOptions3 = {
         loop: true,
         autoplay: true,
@@ -45,7 +43,6 @@ const LoginPage = () => {
         preserveAspectRatio: 'xMidYmid slice'
         }
     };
-
     const defaultOptions4 = {
         loop: true,
         autoplay: true,
@@ -54,7 +51,6 @@ const LoginPage = () => {
         preserveAspectRatio: 'xMidYmid slice'
         }
     };
-    
     return(
         <DivLogin>
             <Image>
@@ -103,7 +99,6 @@ const LoginPage = () => {
                 height={100}
                 width={100}
                 />
-
             <div>
                 <Button
                 onClick={handleClickTrue}
@@ -113,7 +108,6 @@ const LoginPage = () => {
                 > 
                 Login
                 </Button>
-                
                 <Button
                 onClick={handleClickFalse}
                 variant={'text'}
@@ -124,14 +118,10 @@ const LoginPage = () => {
                 </Button>
                 </div>
             <div> 
-                
                 {inicialState ? ( <LoginForm/>) : (<SignUpForm/>)} 
             </div>
             </DivHandleInput>
     </DivLogin>
-
     )
-   
 }
-
 export default LoginPage;

@@ -13,12 +13,7 @@ export const Image = styled.div`
     grid-template-rows: 1fr 1fr 1fr 1fr;
     min-width: 100%;
     @media screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    max-width: 200px;
-
-
-
-    
-            
+    max-width: 200px;        
 }
     `
 export const Div1 = styled.div`
@@ -84,12 +79,8 @@ export const DivHandleInput = styled.div`
     border: solid;
     min-height: 100%;
     min-width: 100%;
-    background: white;
-    
-
-            
+    background: white;      
 }
-
 `
 export const Text = styled.h1`
  color:#c5cacf;

@@ -7,21 +7,19 @@ export const useProtectedPage = () => {
 
   useLayoutEffect(() => {
     const token = window.localStorage.getItem("token");
-
     if (!token) {
       goToLogin(history)
     }
   }, [history]);
 };
 
-// Não solicitar senha se ja estiver logado
+// Lógica de não solicitar senha se ja estiver logado
 
 export const useUnprotectedPage = () => {
   const history = useHistory();
 
   useLayoutEffect(() => {
     const token = window.localStorage.getItem("token");
-
     if (!token) {
       goToLogin(history)
     } else {

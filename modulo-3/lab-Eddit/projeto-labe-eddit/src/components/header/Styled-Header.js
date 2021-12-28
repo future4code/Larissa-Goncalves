@@ -10,17 +10,12 @@ export const DivHeader = styled.div`
     border-bottom: solid 1px #c5cacf;
     background:  linear-gradient(45deg, #1f9bf0 30%, #befcc9 90%) ;
 
-
 @media screen and (min-device-width : 320px) and (max-device-width : 480px) {
     width: 100vw;
-    
 }
 @media screen and (min-device-width : 481px) and (max-device-width : 800px) {
-    /* max-width: 61vw; */
     width: 100vw;
 }
-
-
     h3{
         color: white;
         margin: 10px;

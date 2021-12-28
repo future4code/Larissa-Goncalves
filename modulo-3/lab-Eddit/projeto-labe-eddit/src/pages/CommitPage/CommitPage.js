@@ -1,7 +1,5 @@
 import { useProtectedPage } from "../../hooks/useProtectedPage";
-import { DivFeed, InputComments, NavBar, News, Posts, PostsLists } from "./CommitPage-styled";
-import NavBarPage from "../../components/navBar/NavBar";
-import NewsPage from "../../components/News/NewsPage";
+import { DivFeed, InputComments,Posts, PostsLists } from "./CommitPage-styled";
 import { goToFeed } from "../../rotes/Coordinator";
 import { useHistory, useParams } from "react-router";
 import useRequestData from "../../hooks/useRequestData"
@@ -15,20 +13,16 @@ import Avatar from '@mui/material/Avatar';
 import { TextField } from "@material-ui/core";
 import useForm from "../../hooks/useForm";
 import { createCommit } from "../../components/Requests";
-import Vote from "../../components/Vote";
 import axios from 'axios';
 import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
 import ArrowDownwardOutlinedIcon from '@mui/icons-material/ArrowDownwardOutlined';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import IconButton from '@mui/material/IconButton';
-import ChatBubbleOutlinedIcon from '@mui/icons-material/ChatBubbleOutlined';
-import { useEffect } from "react";
 import { Button } from "@mui/material";
-import { BackpackRounded } from "@mui/icons-material";
-
 
 const CommitPage = () => {
     useProtectedPage()
+
     const history = useHistory()
     const params = useParams()
     const commits = useRequestData([], `${url_base}/posts/${params.id}/comments`)
@@ -36,14 +30,13 @@ const CommitPage = () => {
     console.log(commits)
     
     var corlorRandom = () => {
-        return "#" + Math.floor(Math.random() * 16777215).toString(16);
-      };
+      return "#" + Math.floor(Math.random() * 16777215).toString(16);
+    };
 
-      const onSubmitFormComments = (e) => {
-          e.preventDefault()
-          createCommit(form, params, clear)
-
-      }
+    const onSubmitFormComments = (e) => {
+      e.preventDefault()
+      createCommit(form, params, clear)
+    }
 
   const createPostVote = (commits) => {
     const body = {
@@ -64,7 +57,7 @@ const CommitPage = () => {
 
       })
   }
-
+  
   const changePostVote = (commits) => {
     const body = {
       direction: -1,
@@ -101,7 +94,6 @@ const CommitPage = () => {
     console.log(err.data)
     })
   }
-
     const getPostComments = commits && commits.map((commits) => {
         const userFirstLetter = () => {
             const firstLetter = commits.username && commits.username.substr(0, 1);
@@ -128,7 +120,6 @@ const CommitPage = () => {
                  <IconButton aria-label="share" onClick={() => createPostVote(commits)}>
                    <ArrowUpwardOutlinedIcon color='primary' />
                   </IconButton>
-
               </CardActions>
           </Card>
           </PostsLists>
@@ -136,14 +127,11 @@ const CommitPage = () => {
     })
     return(
         <DivFeed>
-        {/* <NavBar><NavBarPage/></NavBar> */}
         <Posts>
             <div>
             <IconButton aria-label="share"  onClick={() => goToFeed(history)}>
                    <ArrowBackOutlinedIcon color='primary' />
                   </IconButton>
-           
-            
             </div>
             <InputComments>
             <h3>comentários </h3> 
@@ -164,20 +152,13 @@ const CommitPage = () => {
                 fullWidth
                 size='medium'
                 color="secondary"
-               
                 >Comentar</Button>
-
                 </form>
-            
             </InputComments>
             <div>
              {getPostComments}
             </div>
-            
         </Posts>
-        {/* <News>
-            <NewsPage/>
-        </News> */}
 </DivFeed>
     )
 }

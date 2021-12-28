@@ -11,7 +11,6 @@ import { goToCommit } from '../../rotes/Coordinator';
 import { useHistory, useParams } from 'react-router';
 import Loading from "../../components/loading"
 import QuestionAnswerOutlinedIcon from '@mui/icons-material/QuestionAnswerOutlined';
-import Vote from "../../components/Vote"
 import axios from 'axios';
 import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
 import ArrowDownwardOutlinedIcon from '@mui/icons-material/ArrowDownwardOutlined';
@@ -109,7 +108,6 @@ const RecipeReviewCard = () =>  {
                     {posts.body}
                  </Typography>
                  <CardActions >
-                 {/* <Vote/> */}
                  <IconButton aria-label="add to favorites" margin-left={'10px'} onClick={() => changePostVote(posts)} >
                <ArrowDownwardOutlinedIcon color='error' />
               </IconButton>
@@ -132,7 +130,6 @@ const RecipeReviewCard = () =>  {
   return (
     <div>
        {getPostPeoples} 
-      
     </div>
  
    )

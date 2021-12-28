@@ -1,18 +1,14 @@
-import {TextField, Fab, Button} from "@material-ui/core";
+import {TextField, Button} from "@material-ui/core";
 import useForm from "../../hooks/useForm"
-import { goToLogin } from "../../rotes/Coordinator";
 import { useHistory } from "react-router";
 import {signUp} from "../../components/Requests";
-// import { useUnprotectedPage } from "../../hooks/useProtectedPage";
 import { IconButton, InputAdornment } from "@material-ui/core";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
 import { useState } from "react";
 import { CircularProgress } from "@mui/material";
-import { DivInput, Text } from "../LoginPage/Styled-login";
-
+import {Text } from "../LoginPage/Styled-login";
 
 const SignUpForm= () => {
-  // useUnprotectedPage()
     const history = useHistory()
     const [form, onChange, clear] = useForm({username:'', email:'', password:''})
     const [showPassWord, setPassWord] = useState(true);
@@ -32,7 +28,6 @@ const SignUpForm= () => {
   };
 
     return(
-
         <div>
           <Text>Crie uma nova conta</Text>
              <form onSubmit={submitForm}>
@@ -86,20 +81,15 @@ const SignUpForm= () => {
                 }}
                 />
                   <Button
-                  type="submit"
-                variant={'contained'}
-                aria-label='add'
-                fullWidth
-                size='medium'
-                color='secondary'
+                    type="submit"
+                    variant={'contained'}
+                    aria-label='add'
+                    fullWidth
+                    size='medium'
+                    color='secondary'
                 >{ loading ? <CircularProgress size={24}/> :  <>cadastrar-se </>} </Button>
                 </form>
-              
-           
     </div>
-
     )
-   
 }
-
 export default SignUpForm;

@@ -6,33 +6,24 @@ import swal from "sweetalert"
    export const login = (body, clear, history, setLoading) => {
      setLoading(true)
       axios.post(`${url_base}/users/login`, body)
-      .then((res) => {
-        
+      .then((res) => {  
         localStorage.setItem("token", res.data.token)
-      
-        // alert("Você está logado, seja bem vindo")
         clear()
         setLoading(false)
-       
         goToFeed(history)
         swal({
           title: "Bem vindo!",
           text: "Você está logado!",
           icon: "success",
         });
-
-        console.log(res.data)
       })
       .catch((err) => {
         setLoading(false)
-        
-        // alert('Houve um erro!', err.response.data.message)
         swal({
           title: "Houve um erro!",
           text: 'tente novamente',
           icon: "error",
         });
-       
       })
     }
 
@@ -41,7 +32,6 @@ import swal from "sweetalert"
       axios.post(`${url_base}/users/signup`, body)
       .then((res) => {
         localStorage.setItem("token", res.data.token)
-        
         clear()
         setLoading(false)
         swal({
@@ -50,11 +40,9 @@ import swal from "sweetalert"
           icon: "success",
         });
         goToFeed(history)
-        console.log(res.data)
       })
       .catch((err) => {
         setLoading(false)
-        console.log(err.message)
         swal({
           title: "Houve um erro!",
           text: 'tente novamente',
@@ -71,15 +59,10 @@ import swal from "sweetalert"
       })
       .then((res) => {
         alert("Post Criado com sucesso")
-        console.log(res.data)
         clear()
-        
-        
-        
       })
       .catch((err) => {
-        console.log(err)
-
+       
       })
     }
 
@@ -90,15 +73,10 @@ import swal from "sweetalert"
           }
       })
       .then((res) => {
-          console.log(res)
           alert(res.data)
           clear()
-          
-          
-
       }).catch((err) => {
-          console.log(err)
-
+     
       })
   }
 
