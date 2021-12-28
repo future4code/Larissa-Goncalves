@@ -37,12 +37,9 @@ const RecipeReviewCard = () =>  {
       .then((res) => {
         console.log(res.data)
         alert(`Você votou +1 no post de ${posts.username}`)
-        
-
       })
       .catch((err) => {
         console.log(err.data)
-
       })
   }
 
@@ -80,11 +77,12 @@ const RecipeReviewCard = () =>  {
     })
     .catch((err) => {
     console.log(err.data)
+    
     })
   }
 
   var corlorRandom = () => {
-    return "#" + Math.floor(Math.random() * 16777215).toString(16);
+    return "#" + Math.floor(Math.random() * 16777215 ).toString(16);
   };
 
   const onClickCard = (id) => {
@@ -117,11 +115,11 @@ const RecipeReviewCard = () =>  {
               </IconButton>
               {posts.voteSum}
                  <IconButton aria-label="share" onClick={() => createPostVote(posts)}>
-                   <ArrowUpwardOutlinedIcon color='primary' />
+                   <ArrowUpwardOutlinedIcon color='secondary' />
                   </IconButton>
                 
                   <IconButton aria-label="commits" onClick={() => onClickCard(posts.id)}>
-                   <QuestionAnswerOutlinedIcon/> 
+                   <QuestionAnswerOutlinedIcon color='secondary'/> 
                    {posts.commentCount === '1' ? (<>{posts.commentCount}</>) : ('0')}
                   </IconButton>
                   

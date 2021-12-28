@@ -11,8 +11,9 @@ const Header = () => {
     const history = useHistory()
 
   const goToLogout = () => {
-    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("token")
     window.confirm("deseja sair?") ? goToLogin(history) : goToFeed(history)}
+  
 
     return(
         <DivHeader>

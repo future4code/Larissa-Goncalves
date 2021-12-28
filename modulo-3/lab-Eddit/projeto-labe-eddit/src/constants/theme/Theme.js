@@ -11,10 +11,6 @@ const Theme = createTheme ({
             main:ColorTwo,
             text:TextColor,        
         },
-        tercery:{
-            main:ColorTree,
-            text:TextColor,
-        },
         text:{
             primary:NeutralColor,
         }

@@ -1,5 +1,5 @@
 import { useProtectedPage } from "../../hooks/useProtectedPage";
-import { DivFeed, NavBar, News, Posts } from "./CommitPage-styled";
+import { DivFeed, InputComments, NavBar, News, Posts, PostsLists } from "./CommitPage-styled";
 import NavBarPage from "../../components/navBar/NavBar";
 import NewsPage from "../../components/News/NewsPage";
 import { goToFeed } from "../../rotes/Coordinator";
@@ -19,8 +19,12 @@ import Vote from "../../components/Vote";
 import axios from 'axios';
 import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
 import ArrowDownwardOutlinedIcon from '@mui/icons-material/ArrowDownwardOutlined';
+import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import IconButton from '@mui/material/IconButton';
+import ChatBubbleOutlinedIcon from '@mui/icons-material/ChatBubbleOutlined';
 import { useEffect } from "react";
+import { Button } from "@mui/material";
+import { BackpackRounded } from "@mui/icons-material";
 
 
 const CommitPage = () => {
@@ -98,16 +102,13 @@ const CommitPage = () => {
     })
   }
 
-
-
-
-
     const getPostComments = commits && commits.map((commits) => {
         const userFirstLetter = () => {
             const firstLetter = commits.username && commits.username.substr(0, 1);
             return commits.username && firstLetter.toUpperCase();
           };
         return(
+          <PostsLists>
           <Card key={commits.id } sx={{ maxWidth: 900 }}>
               <CardHeader
               avatar={
@@ -130,6 +131,7 @@ const CommitPage = () => {
 
               </CardActions>
           </Card>
+          </PostsLists>
         )
     })
     return(
@@ -137,11 +139,14 @@ const CommitPage = () => {
         {/* <NavBar><NavBarPage/></NavBar> */}
         <Posts>
             <div>
-            <button onClick={() => goToFeed(history)}>Voltar</button>
-            <h3>comentarios</h3>
+            <IconButton aria-label="share"  onClick={() => goToFeed(history)}>
+                   <ArrowBackOutlinedIcon color='primary' />
+                  </IconButton>
+           
             
             </div>
-            <div>
+            <InputComments>
+            <h3>comentários </h3> 
                 <form onSubmit={onSubmitFormComments}>
                 <TextField
                 placeholder={'Faça um comentario'}
@@ -152,15 +157,20 @@ const CommitPage = () => {
                 onChange={onChange}
                 fullWidth
                 />
-             <button
-             type='submit'
-             >commit</button>
+            < Button
+                  type="submit"
+                variant={'contained'}
+                aria-label='add'
+                fullWidth
+                size='medium'
+                color="secondary"
+               
+                >Comentar</Button>
 
                 </form>
             
-            </div>
+            </InputComments>
             <div>
-             rederiza comits
              {getPostComments}
             </div>
             

@@ -7,9 +7,6 @@ function App() {
     <ThemeProvider theme={Theme}>
       <Routes/>  
     </ThemeProvider>
-    
-
-   
   );
 }
 
