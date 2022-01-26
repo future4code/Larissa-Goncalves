@@ -1,5 +1,5 @@
 //2
-type tasks = {
+export type tasks = {
     "userId": number,
     "id" : number,
     "title" : string,
@@ -26,4 +26,23 @@ export const toDoList: tasks[] = [
         title: "desenhar",
         completed: true,
     },
+    {
+        userId: 2,
+        id: 1,
+        title: "desenhar flores",
+        completed: false,
+    },
+    {
+        userId: 2,
+        id: 2,
+        title: "passear com o cachorro",
+        completed: false,
+    },
+    {
+        userId: 3,
+        id: 1,
+        title: "Ler",
+        completed: false,
+    },
+    
 ]
