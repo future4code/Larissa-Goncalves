@@ -126,6 +126,32 @@ SELECT id, name FROM Actor WHERE name LIKE "%g%" OR name LIKE "%G%";
 ###D
 SELECT id, name FROM Actor WHERE (name LIKE "%g%" OR name LIKE "%G%" OR name LIKE "%a%" OR name LIKE "%A%")AND salary BETWEEN 350000 AND 900000;
 
+###6
+-- A
+SELECT id, title, rating FROM Movie WHERE id = "003";
+-- B
+SELECT id,title,rating, synopsis, release_Date FROM Movie WHERE title = "Se eu fosse você ";
+-- C
+SELECT id, title, synopsis, rating FROM Movie WHERE rating > 7;
+
+###7
+-- A 
+SELECT * FROM Movie
+WHERE title LIKE "%Deus%";
+-- B
+SELECT * FROM Movie
+WHERE title LIKE "%Se eu fosse você%" OR
+      synopsis LIKE "%Helena%";
+-- C 
+SELECT * FROM Movie
+WHERE title LIKE "%Doce%" OR
+      synopsis LIKE "%senhora de 85 anos%";
+
+-- D
+SELECT * FROM Movie
+WHERE release_date < "2020-05-04" AND 
+      (title LIKE "%Brasileiro%" OR
+      synopsis LIKE "%Deus%") AND rating > 7;
 
 
 
