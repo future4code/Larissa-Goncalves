@@ -1,8 +1,8 @@
-### APROFUNDAMENTOS EM SQL
+use `carver-larissa-de-souza-lanes-goncalves`;
 
 SET SQL_SAFE_UPDATES = 0;
 
-# 1
+#1
 -- a
 #Altera a tabela ator apagando a coluna salário.
 -- b
@@ -12,7 +12,7 @@ SET SQL_SAFE_UPDATES = 0;
 -- d
 ALTER TABLE Actor CHANGE gender gender VARCHAR(100);
 
- # 2
+#2
 -- a
 UPDATE Actor SET name =" Fernandinha montenegro" WHERE id = "003";
 UPDATE Actor SET birth_date = "1930-10-12" WHERE id = "003";
@@ -30,7 +30,7 @@ WHERE id = "001";
 UPDATE Actor SET name = "Larissa" WHERE id = "010";
 /*Não houve nenhum erro na atualização*/
 
-# 3
+#3
 -- a
 DELETE from Actor WHERE id = "002";
 -- b
@@ -39,7 +39,7 @@ WHERE
 	gender = "male" AND
 	salary > 1000000;
 
-# 4
+#4
 -- a
 SELECT MAX(salary) as menor_salario_entre_todos  FROM Actor;
 -- b
@@ -49,7 +49,7 @@ SELECT COUNT(*) as QUANTAS_ATRIZES FROM Actor WHERE gender = "female";
 -- d-
 SELECT SUM(salary) as A_soma_de_todos_os_salario  FROM Actor;
 
-# 5 
+#5
 -- a
 SELECT COUNT(*), gender
 FROM Actor
@@ -73,7 +73,7 @@ SELECT AVG(salary), gender FROM Actor
 GROUP BY gender;
 # media salarial dos homens e das mulheres 
 
-# 6
+#6
 
 -- a
 ALTER TABLE Movie ADD playing_limit_date DATE;
