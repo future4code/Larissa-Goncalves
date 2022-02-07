@@ -1,0 +1,5 @@
+.env
+node_modules
+connection.ts
+build
+tsconfig.json
