@@ -1,1 +1,1 @@
-export const URL_BASE = "https://labenews.herokuapp.com"
+export const URL_BASE : string = "https://labenews.herokuapp.com"

@@ -8,17 +8,20 @@
     "ex2": "tsc && node ./build/ex2.js",
     "ex3": "tsc && node ./build/ex3.js",
     "ex4": "tsc && node ./build/ex4.js",
-    "ex5": "tsc && node ./build/ex5.js"
-
+    "ex5": "tsc && node ./build/ex5.js",
+    "ex6": "tsc && node ./build/ex6.js",
+    "start": "tsc && node .build/index.js"
   },
   "keywords": [],
   "author": "Larissa Lanes",
   "license": "ISC",
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/knex": "^0.16.1",
     "@types/node": "^17.0.15",
+    "axios": "^0.25.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
