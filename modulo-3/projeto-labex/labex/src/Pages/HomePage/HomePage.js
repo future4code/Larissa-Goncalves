@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { DivHome, DivImg, DivText, DivButton } from "./HomePage-Styled";
-import Header from "../../Components/Header./Header"
+import Header from "../../Components/Header/Header"
 import {Fab} from "@mui/material"
 import LocalAirportRoundedIcon from '@mui/icons-material/LocalAirportRounded';
 import HttpsRoundedIcon from '@mui/icons-material/HttpsRounded';
