@@ -12,13 +12,13 @@ export class UserController{
 
             //gera um novo token?? como assim
             const token = await userBusiness.signup(name, email, password)
-
+            
             //se tudo der certo manda a mensagem de sucesso
             res.status(200).send({
                 message: 'Usuário criado com sucesso!',
                 token
             })
-
+            
             
             //se der errado manda a mensagem de error
         }catch(error: any){

@@ -5,3 +5,5 @@ export const userRouter = express.Router()
 const userController = new UserController()
 
 userRouter.post('/signup', userController.signup)
+
+console.log(userController)

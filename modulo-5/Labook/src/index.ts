@@ -10,6 +10,8 @@ app.use(express.json())
 app.use(cors())
 
 app.use('/users', userRouter)
+console.log(userRouter)
+
 
 
 /**************************** ENDPOINTS ******************************/

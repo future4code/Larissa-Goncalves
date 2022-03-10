@@ -42,8 +42,9 @@ export class UserBusiness{
         const token: string = auth.generateToken({
             id: genderId,
         })
-
+       
         //retorna o token de acesso para o usuário
         return token
+        
     }
 }
