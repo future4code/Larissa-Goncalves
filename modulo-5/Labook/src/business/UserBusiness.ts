@@ -1,3 +1,4 @@
+import { InputSignUp, user, InputLogin } from './../model/UserType';
 import { UserDatabase } from './../data/UserDatabase';
 import { Authenticator } from './../services/Authenticator';
 import { HashManager } from '../services/HashManager';
@@ -10,41 +11,69 @@ const userDB = new UserDatabase()
 
 export class UserBusiness{
 
-    signup = async(
-        name: string,
-        email: string,
-        password: string
-    ) => {
-        //faz a verificação se todos os campos foram preenchidos 
-        if(
-            !name ||
-            !email ||
-            !password
-        ){
-            throw new Error('Preecha corretamente todos os campos')
+    async signup (input: InputSignUp) : Promise<string> {
+
+        try{
+
+            if(!input.name || !input.email || !input.password){
+                throw new Error ('preencha todos os dados corretamente')
+            }
+    
+            const id : string = idGenerator.generateId()
+    
+            const cypherPassword = await hashManager.hash(input.password)
+            
+            const newUser: user = {
+                id,
+                name: input.name,
+                email: input.email,
+                password: cypherPassword,
+            }
+
+            await userDB.insertUser(newUser)
+
+            const token: string = auth.generateToken({id})
+
+            return token;
+    
+
+        }catch(error: any){
+            throw new Error(error.message)
+
         }
+    }
 
-        //se estiver tudo certo, gera um id para o usuário
-        const genderId : string = idGenerator.generateId()
 
-        //criptografa a senha do usuário
-        const cypherPassword = await hashManager.hash(password)
 
-        //insere o usuário na tabela, gera o id e criptografa a senha 
-        await userDB.insertUser({
-            id: genderId,
-            name,
-            email,
-            password: cypherPassword
-        })
+    async login (input: InputLogin){
 
-        //retorna um token de autorização para acessar o site
-        const token: string = auth.generateToken({
-            id: genderId,
-        })
-       
-        //retorna o token de acesso para o usuário
-        return token
-        
+        try{
+
+            if (!input.email || !input.password) {
+                throw new Error('email ou senha incorreta')
+             }
+
+             const user: user = await userDB.getEmailUser(input.email)
+
+             if(!user){
+                 throw new Error('Usuário invalido')
+             }
+
+            const passwordIsCorrect: boolean = await hashManager.compare(input.password, user.password)
+
+            if (!passwordIsCorrect) {
+            throw new Error('algo deu errado, verifique suas senha e email')
+            }
+
+            const token: string = auth.generateToken({
+                id: user.id
+            });
+
+            return token;
+
+
+        }catch(error: any){
+            throw new Error(error.message)
+        }
     }
 }

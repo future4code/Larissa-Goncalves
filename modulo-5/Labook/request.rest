@@ -1,11 +1,37 @@
 POST http://localhost:3001/users/signup
-Content-Type: "application/json"
+Content-Type: application/json
 
 {
-    "name": "larissa",
-    "email": "larissa@lanes",
+    "name": "hayane",
+    "email": "hayane@hay",
     "password": "123456"
 }
 
 ###
-n
+
+# @name login
+POST http://localhost:3001/users/login
+Content-Type: application/json
+
+{
+    "email": "hayane@hay",
+    "password": "123456"
+}
+
+###
+
+# @name create
+POST http://localhost:3001/posts/create
+Content-Type: application/json
+Authorization: {{login.response.body.token}}
+
+{
+   "photo": "https://picsum.photos/id/237/200/300",
+   "description":"Flores de van gogh",
+   "role": "EVENT"
+}
+
+
+###
+
+GET http://localhost:3001/posts/:id

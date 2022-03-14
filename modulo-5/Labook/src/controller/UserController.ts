@@ -1,28 +1,49 @@
-import { UserBusiness } from './../business/UserBusiness';
+import { InputSignUp, InputLogin } from './../model/UserType';
 import { Request, Response } from "express";
+import { UserBusiness } from "../business/UserBusiness";
 
 const userBusiness = new UserBusiness
 
 export class UserController{
     
     signup = async(req: Request, res: Response) => {
-        try{
-            //pede um req no body do user
-            const {name, email, password} = req.body
 
-            //gera um novo token?? como assim
-            const token = await userBusiness.signup(name, email, password)
-            
-            //se tudo der certo manda a mensagem de sucesso
-            res.status(200).send({
-                message: 'Usuário criado com sucesso!',
-                token
-            })
-            
-            
-            //se der errado manda a mensagem de error
+        try{
+
+            const input : InputSignUp = {
+                name: req.body.name,
+                email: req.body.email,
+                password: req.body.password
+            }
+
+            const token = await userBusiness.signup(input)
+
+            res.status(200).send(`usuário criado com sucesso! ${token}`)
+
         }catch(error: any){
             res.status(400).send(error.message)
+        }
+    }
+
+    login = async(req: Request, res: Response) => {
+
+        try{
+
+            const input : InputLogin = {
+                email: req.body.email,
+                password: req.body.password
+            }
+
+            const token = await userBusiness.login(input)
+
+            res.status(200).send(`você está logado ${token}`)
+
+        }catch(error: any){
+            let message = error.sqlMessage || error.message
+            res.statusCode = 400
+      
+            res.send({ message })
+          
         }
     }
 }
