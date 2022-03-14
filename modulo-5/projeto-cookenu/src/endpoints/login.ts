@@ -1,33 +1,41 @@
-import { HashManager } from './../middleware/hashManager';
+import { generateToken } from './../services/authenticator';
+import { compareHash } from './../services/hashManager';
+import { userTableName } from './../types/user';
 import { Request, Response } from "express"
+import connection from "../connection"
 
-export async function login (req: Request, res: Response){
-    try{
-        const {email, password} = req.body
+export default async function login (
+    req: Request,
+    res: Response
+    ): Promise<void>{
+        try{
+            const {email, password} = req.body
 
-        if(!email || !password){
-            res.statusCode = 402
-            throw new Error('Algo deu errado, preencha tudo corretamente')
+            if(!email || !password){
+                res.statusCode = 422
+                throw new Error ('Preencha corretamente os campos Email e password')
+            }
+            
+            const [user] = await connection(userTableName).where({email})
+
+            const passwordOk: boolean = compareHash(password, user.password)
+
+            if(!user || !passwordOk){
+                res.statusCode = 401
+                throw new Error ('email ou senha incorreto, tente novamente')
+            }
+
+            const token = generateToken({id: user.id})
+
+            res.send({token})
+
+        }catch(error){
+            console.log('algo deu errado')
+
+            if(res.statusCode === 200){
+                res.status(500).send('Error interno, tente novamente')
+            }else{
+                res.status(401).send('Digite corretamente o dados')
+            }
         }
-
-        //validação se o usuário existe
-        // const [user] = await.connection(nome da tabela).where({email})
-
-        
-        //pega o password guardado no banco de dados e compara
-        // const passwordOk : boolean = user && new HashManager().compareHash(password, user.password)
-       
-       
-        //se o password tiver errado ele nega o acesso -->
-        // if(!user || !passwordOk){
-        //     res.statusCode = 402
-        //     res.statusMessage = "email ou senha incorreto"
-        //     throw new Error('email ou senhas incorreto')
-        // }
-
-    }catch(err){
-        res.status(401).send(err)
-        console.log('algo deu errado')
-
     }
-}

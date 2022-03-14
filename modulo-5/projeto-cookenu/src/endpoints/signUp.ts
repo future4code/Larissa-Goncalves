@@ -1,64 +1,56 @@
-// import { authenticator } from './../middleware/authenticator';
-import { UserDataBase} from './../data/userDataBase';
-import { User } from './../types/user';
-import { HashManager } from './../middleware/hashManager';
+import { generateToken } from './../services/authenticator';
+import { HashManager } from './../services/hashManager';
+import { userTableName } from './../types/user';
 import { Request, Response } from "express";
-import { IdGenerator } from "../middleware/idGenerator";
+import connection from "../connection";
+import generateId from "../services/idGenerator";
 
-export async function signUp(req: Request, res: Response){
+
+export default async function signUp (
+    req: Request,
+    res: Response
+    ): Promise<void>{
     try{
         const {name, email, password} = req.body
-        //validação
+
         if(!name || !email || !password){
-            res.statusCode = 401
-            throw new Error ('preencha todos os dados corretamente')
-            // res.status(401).send('preencha todos os dados corretamente')
+            res.statusCode = 422
+            throw new Error ('preencha corretamente todos campos')
         }
 
-        //verifica pelo email se esse usuário já existe
-        const userDataBase = new UserDataBase()
-        const userById = userDataBase.userByEmail(email)
+        const id: string = generateId()
 
-        if(await userById){
-            res.status(409).send('já existe um usuário criado com esse email');
+        const cypherPassword: string = HashManager(password)
+
+        if(password.length > 6){
+            res.statusCode = 422
+            throw new Error ('Senha muito longa, Por favor insira uma nova senha')
         }
 
+        const [user] = await connection(userTableName).where({email})
 
-        //Gera um Id aleatório para o usuário com a lib 'uuid' ==>
-        const idGenerator = new IdGenerator();
-        const idUser = idGenerator.generate()
-        //
-        //outra maneira ==>
-        const id :string = new IdGenerator().generate()
+        if(user){
+            res.statusCode = 409
+            throw new Error('Email já cadastrado, insira um novo email')
+        }
 
-        //Criptografa a senha do usuário com a lib 'bcrypt' ==>
-        const hashManager = new HashManager(); 
-        const hashPassword = hashManager.hash(password)
+        const token : string = generateToken({id})
 
-        //outra maneira ==>
-        const cypherPassword: string = new HashManager().hash(password)
-        //
 
-        //criar o usuário
-        const newUser = new User(id, name, email, cypherPassword)
+        await connection(userTableName).insert({
+            id,
+            name, 
+            email, 
+            password : cypherPassword
+        })
 
+        res.send(token)
         
-        // const newUser: User = {id, name, email, hashPassword}
 
-        //adiona o usuário na tabela
-        await userDataBase.saveUser(newUser);
+    }catch(error: any){
+        console.log(error.message);
+        res.status(401).send(error.message)
 
-        // await.connection('cookenu_User').insert(newUser)
-        
-        //guarda o token do usuário para acessar areas privadas
-
-        // const Authenticator = new authenticator();
-        // const token = Authenticator.auth({id});
-
-        // res.status(201).send({message: "usuário criado com sucesso", token})
-
-    }catch(err){
-        res.status(401).send(err)
-        console.log('não vai não querida')
     }
+
 }
