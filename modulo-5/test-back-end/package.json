@@ -6,7 +6,8 @@
     "scripts": {
         "start": "tsc && node --inspect ./build/index.js",
         "dev": "ts-node-dev ./src/index.ts",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "migrations": "tsc && node ./build/migrations"
     },
     "keywords": [],
     "author": "",
