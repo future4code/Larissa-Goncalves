@@ -1,0 +1,20 @@
+POST http://localhost:3003/User/signup
+Content-Type: application/json
+
+{
+    "name": "lar",
+    "email": "larissa@labenu",
+    "password": "1234567",
+    "role": "ADMIN"
+}
+
+###
+
+POST http://localhost:3003/User/login
+Content-Type: application/json
+
+{
+    "email": "Larissa@Labenu",
+    "password": "12345"
+
+}
