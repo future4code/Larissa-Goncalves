@@ -1,0 +1,10 @@
+# POST http://localhost:3003/user/signup
+# {
+#     "name": "Larissa",
+#     "nickname": "Lari",
+#     "email": "larissa@lanes",
+#     "password":"1234",
+# 	"role": "ADMIN"
+# }
+
+# ###
