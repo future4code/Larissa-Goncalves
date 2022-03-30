@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "Ex-1": "ts-node-dev ./src/Ex-1",
+    "Ex-2": "ts-node-dev ./src/Ex-2",
+    "Ex-3": "ts-node-dev ./src/Ex-3",
+    "Ex-4": "ts-node-dev ./src/Ex-4",
+    "Ex-5": "ts-node-dev ./src/Ex-5"
   },
   "keywords": [],
   "author": "",
