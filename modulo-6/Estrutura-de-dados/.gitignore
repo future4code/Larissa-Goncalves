@@ -1,0 +1,8 @@
+DB_HOST =  35.226.146.116
+DB_USER = larissa-de-souza-lanes-goncalves
+DB_PASSWORD = VNEM%EmIzsQrX6c86KOY
+DB_SCHEMA = carver-larissa-de-souza-lanes-goncalves
+
+BCRYPT_COST = 12
+
+JWT_KEY = LARISSA12344
