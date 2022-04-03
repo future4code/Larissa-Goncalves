@@ -1,25 +1,36 @@
-export class LinkedList {
-    constructor(public start?: LinkedListNode) {}
-  
-    public appendToTail(value: number) {
-      if (!this.start) {
-        this.start = new LinkedListNode(value);
-      } else {
-        let node: LinkedListNode = this.start;
-        while (node && node.getNext() !== undefined) {
-          node = node.getNext()!;
-        }
-        node.setNext(new LinkedListNode(value));
+import { ListNode } from "./lists"
+
+
+class LinkedList{
+constructor(
+   public start: ListNode | null
+){}
+
+public addToTail = (value: any) => {
+   if (!this.start){
+      this.start = new ListNode(value)
+   }
+   else{
+      let currentNode = this.start
+      while(currentNode.next){
+         currentNode = currentNode.next
       }
-    }
-  
-    public print(): void {
-      let node: LinkedListNode | undefined = this.start;
-      let i = 1;
-      while (node !== undefined) {
-        console.log(`Elemento ${i}: `, node!.getData());
-        node = node!.getNext();
-        i++;
+      currentNode.next = new ListNode(value)
+   }
+}
+
+public find = (value: any):ListNode | null => {
+
+      let currentNode = this.start
+      while(currentNode !== null && currentNode.value !== value ){
+         currentNode = currentNode.next
       }
-    }
-  }
+      return currentNode
+}
+
+
+}
+
+export {LinkedList} 
+
+console.log(LinkedList)

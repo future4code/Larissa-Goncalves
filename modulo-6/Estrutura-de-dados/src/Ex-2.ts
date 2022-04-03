@@ -1,3 +1,6 @@
+import { LinkedList } from "./Ex-1"
+import { ListNode } from "./lists"
+
 class Stack {
     constructor(
        public frames: LinkedList = new LinkedList()
