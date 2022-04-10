@@ -25,8 +25,10 @@ export const connection = knex({
             pet_number INT NOT NULL,
             start VARCHAR(255) NOT NULL,
             finish VARCHAR(225) NOT NULL,
-            status ENUM("FINALIZADO", "PENDENTE", "EM ANDAMENTO") DEFAULT "PENDENTE"
+            status ENUM("FINALIZADO", "PENDENTE", "EM ANDAMENTO") DEFAULT "PENDENTE",
+            price VARCHAR(255) NOT NULL
         );  
+
         
     `).then(() => console.log(
         'Tabelas criadas com sucesso!'

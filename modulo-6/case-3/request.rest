@@ -1,14 +1,20 @@
-POST http://localhost:3001/dog/createWalk
+POST http://localhost:3022/dog/createWalk
 Content-Type: application/json
 
 {
-    "date" : "2022/06/02",
-    "duration" :" 30", 
-    "pet_number": 4, 
-    "start" : "08:00", 
-    "finish" : "09:00",
-    "status" : "PENDENTE"
+    "date" : "2022-04-11",
+    "duration" : "30", 
+    "petNumber": 5,
+    "start" : "9", 
+    "finish" : "18",
+    "status" : "FINALIZADO"
 }
 
 
 ###
+
+GET http://localhost:3022/dog/
+
+
+
+

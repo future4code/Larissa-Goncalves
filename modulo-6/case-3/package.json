@@ -9,7 +9,7 @@
   "scripts": {
     "test": "clear && echo \"Running tests...\" && jest",
     "jest": "jest",
-    "start": "tsc & node build/index.js",
+    "start": "tsc & node ./build/index.js",
     "build": "tsc",
     "dev": "tsnd src/index.ts",
     "migrations": "tsnd src/migrations.ts"

@@ -1,6 +1,6 @@
 import { DogDTO } from './../model/DogModel';
-import { DogBusiness } from './../business/DogBusiness';
 import { Request, Response } from "express"
+import DogBusiness from '../business/DogBusiness';
 
 export class DogController {
 
@@ -8,16 +8,21 @@ export class DogController {
         try{
             const {date, duration, petNumber, start, finish, status } = req.body
             
-            const result =  await DogBusiness.createWalk(
+            const input: DogDTO = {
                date,
                duration,
                petNumber,
                start,
                finish,
                status
-            );
+            }
+
+            const result = await DogBusiness.createWalk(
+               input
+            )
+           
              
-             res.status(200).send(result);
+             res.status(201).send(result);
              
           } catch (error) {
              
@@ -27,10 +32,34 @@ export class DogController {
                res.send({ message: "Algo deu errado ao cadastrar passeio" })
             }
           }
-       
+    }
+    
+    async getWalkById(req: Request, res: Response){
+       try{
+          const id = req.params.id
+          
+          const result = await DogBusiness.getWalkById(id)
 
-    } 
-}
+          res.status(200).send(result)
+
+       }catch(error){
+         if (error instanceof Error) {
+            res.status(400).send(error.message);
+        } else {
+           res.send({ message: "Algo deu errado ao procurara por passeio" })
+        }
+       }
+    }
+    }
+
+
+
+
+
+
 
 export default new DogController(
 )
+
+
+
