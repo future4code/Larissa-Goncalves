@@ -1,6 +1,7 @@
+import { pokemonRouter } from './router/PokemonRouter';
 import app from "./app";
 
-app.get("/")
+app.use("/pokemon", pokemonRouter)
 
 
 

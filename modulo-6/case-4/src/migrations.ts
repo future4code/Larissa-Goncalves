@@ -27,6 +27,9 @@ class Migrations extends BaseDatabase{
             spawns INT NOT NULL,
             shiny INT NULL
        );
+
+            
+       
         `).then(() => console.log(
             "Tabelas criadas com sucesso"
         )).catch(error => 
@@ -41,26 +44,3 @@ const migrations = new Migrations()
 migrations.tables()
 
 
-
-// INSERT INTO ${table_name} (id, name, pokedex_number, generation, evolution_stage, evolved, family_id, type_1, type_2,
-//     weather_1, weather_2, stat_total, atk, def, sta, legendary, aquireable, spawns, shiny) 
-// VALUES
-// ("id": 1,
-// "name": "Bulbasaur",
-// "pokedex_number": 1,
-// "generation": 1,
-// "evolution_stage": 1,
-// "evolved": 0,
-// "family_id": 1,
-// "Type_1": "grass",
-// "type_2": "poison",
-// "weather_1": "Sunny\/clear",
-// "weather_ 2": "Cloudy",
-// "stat_total": 326,
-// "atk": 118,
-// "def": 118,
-// "sta": 90,
-// "legendary": 0,
-// "aquireable": 1,
-// "spawns": 1,
-// "shiny": 0);
