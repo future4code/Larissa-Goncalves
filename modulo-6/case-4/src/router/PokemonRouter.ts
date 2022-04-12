@@ -7,3 +7,4 @@ export const pokemonRouter = express.Router()
 const pokemonController = new PokemonsController()
 
 pokemonRouter.get("/by/:id", pokemonController.getPokemonsById)
+pokemonRouter.get("/family/:id", pokemonController.getPokemonsByFamilyId)

@@ -52,11 +52,17 @@ export class PokemonsDatabase extends BaseDatabase{
         }
     }
 
-    async getPokemonsByFamilyId(){
+    async getPokemonsByFamilyId(family_id: number){
         try{
+            const result = await BaseDatabase.connection.raw(`
+                SELECT * FROM ${table_name} WHERE id = '${family_id}'
+            `)
+            return this.toModel(result[0][0]);
 
         }catch(error){
-
+            if(error instanceof Error){
+                throw new Error(error.message)
+            }
         }
     }
 

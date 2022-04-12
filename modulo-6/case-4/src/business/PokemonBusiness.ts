@@ -45,10 +45,31 @@ class PokemonsBusiness {
         }
     }
 
-    async getPokemonsByFamilyId(){
+    async getPokemonsByFamilyId(family_id: number){
         try{
+            if(!family_id){
+                throw new CustomError(422, "Passe um id da familia")
+            }
+
+            const pokeFamily = (async ( ) => {
+                const data = await this.pokemonsDatabase.getPokemonsByFamilyId(family_id)
+                return data
+            })
+
+            const dataFamily = await pokeFamily()
+
+            if(!dataFamily){
+                throw new CustomError(422, "Familia do pokemon não encontrado")
+            }
+
+            return dataFamily
 
         }catch(error){
+            if(error instanceof Error){
+                throw new CustomError(500, error.message)
+            }else {
+                throw new CustomError(422, "Error ao encontrar o pokemon pelo id da familia")
+            }
 
         }
     }
