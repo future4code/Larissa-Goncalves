@@ -4,7 +4,7 @@ class Migrations extends BaseDatabase{
 
     populate = async () => {
 
-        await BaseDatabase.connection.raw(`
+    await BaseDatabase.connection.raw(`
 
     INSERT INTO ${table_name} (id,name,pokedex_number,generation,evolution_stage,evolved,family_id,Type_1,type_2,weather_1,weather_2,stat_total,atk,def,sta,legendary,aquireable,spawns,shiny) VALUES (1,'Bulbasaur',1,1,1,0,1,'grass','poison','Sunny/clear','Cloudy',326,118,118,90,0,1,1,0);
     INSERT INTO ${table_name} (id,name,pokedex_number,generation,evolution_stage,evolved,family_id,Type_1,type_2,weather_1,weather_2,stat_total,atk,def,sta,legendary,aquireable,spawns,shiny) VALUES (2,'Ivysaur',2,1,2,0,1,'grass','poison','Sunny/clear','Cloudy',422,151,151,120,0,1,1,0);

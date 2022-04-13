@@ -15,3 +15,9 @@ GET http://localhost:3005/pokemon/generation/2
 GET http://localhost:3005/pokemon/all
 
 ###
+
+GET http://localhost:3005/pokemon/info/200
+
+###
+
+

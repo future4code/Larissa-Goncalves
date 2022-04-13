@@ -100,6 +100,34 @@ class PokemonsBusiness {
         }
     }
 
+    async getInfoPokemons(id: number){
+        try{
+            if(!id){
+                throw new CustomError(403, "Passe o id do pokemon")
+             }
+ 
+             const pokeInfo = (async () => {
+                 const data = await this.pokemonsDatabase.getInfoPokemons(id)
+                 return data
+             })
+ 
+             const dataPokeInfo = await pokeInfo()
+ 
+             if(!dataPokeInfo){
+                 throw new CustomError(422, "Pokemon não encontrado")
+             }
+ 
+             return dataPokeInfo
+
+        }catch(error){
+            if(error instanceof Error){
+                throw new CustomError(500, error.message)
+            }else {
+                throw new CustomError(422, "Error ao encontrar info de pokemons")
+            }
+        }
+    }
+
 
 
 }

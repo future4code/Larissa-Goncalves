@@ -87,5 +87,21 @@ export class PokemonsDatabase extends BaseDatabase{
         }
     }
 
+    async getInfoPokemons(id: number): Promise<Pokemons | any>{
+        try{
+            const result = await BaseDatabase.connection.raw(`
+             SELECT id, name, generation, evolution_stage, evolved, type_1, type_2,weather_1,  weather_2, stat_total,
+             atk, def, sta, legendary, aquireable, spawns, shiny 
+             FROM ${table_name} WHERE id = '${id}'
+             `)
+
+             return result
+             
+        }catch(error){
+            if(error instanceof Error){
+                throw new Error(error.message)
+            }
+        }
+    }
 
 }
