@@ -33,9 +33,25 @@ export class PokemonsDatabase extends BaseDatabase{
     async getAllPokemons(): Promise<Pokemons[] | undefined>{
         try{
             const result = await BaseDatabase.connection.raw(`
-                SELECT * FROM ${table_name}
+                SELECT * FROM ${table_name};
+           
             `) 
-            return result
+            return result[0]
+
+        }catch(error){
+            if(error instanceof Error){
+                throw new Error(error.message)
+            }          
+        }
+    }
+
+    async pages(page: number | any, offset: number| any): Promise<void| any>{
+        try{
+            const result = await BaseDatabase.connection.raw(`
+                SELECT * FROM ${table_name} LIMIT ${page - 1}, ${offset};
+           
+            `) 
+            return result[0]
 
         }catch(error){
             if(error instanceof Error){
@@ -63,7 +79,7 @@ export class PokemonsDatabase extends BaseDatabase{
             const result = await BaseDatabase.connection.raw(`
                 SELECT id, name, pokedex_number, generation, family_id, evolution_stage  FROM ${table_name} WHERE family_id = '${family_id}'
             `)
-            return result;
+            return result[0];
 
         }catch(error){
             if(error instanceof Error){
@@ -77,8 +93,8 @@ export class PokemonsDatabase extends BaseDatabase{
             const result = await BaseDatabase.connection.raw(`
              SELECT id, name, generation, family_id FROM ${table_name} WHERE generation = '${generation}'
             `)
-
-            return result;
+            
+            return result[0];
 
         }catch(error){
             if(error instanceof Error){
@@ -95,7 +111,7 @@ export class PokemonsDatabase extends BaseDatabase{
              FROM ${table_name} WHERE id = '${id}'
              `)
 
-             return result
+             return result[0]
 
         }catch(error){
             if(error instanceof Error){

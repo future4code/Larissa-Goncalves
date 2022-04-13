@@ -8,11 +8,25 @@ class PokemonsBusiness {
         private pokemonsDatabase: PokemonsDatabase
     ){}
 
-    async getAllPokemons(){
+    async getAllPokemons(page: number| string, offset: number | string){
         try{
-            const result = await this.pokemonsDatabase.getAllPokemons()
+           
+            const pagination = (async (page: Number | any, offset: Number | any) => {
+                if(page === 0){
+                    throw new CustomError(400, "Página 0 não existe")
+                }else if (!page && !offset){
+                    throw new CustomError(400, "Preencha corretamente todos os dados da paginação")
+                }else if (page && offset){
+                    const result = await this.pokemonsDatabase.pages(page, offset)
+                    return result
+                }else{
+                    const result = await this.pokemonsDatabase.getAllPokemons()
+                    return result
+                }
 
-            return result
+            })
+            
+            return pagination(page, offset);
 
         }catch(error){
             if(error instanceof Error){

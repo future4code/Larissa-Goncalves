@@ -6,7 +6,12 @@ export class PokemonsController {
 
     async getAllPokemons(req: Request, res: Response){
         try{
-            const result = await PokemonBusiness.getAllPokemons()
+
+            const page = Number(req.params.page)
+            const offset = Number(req.params.offset)
+         
+
+            const result = await PokemonBusiness.getAllPokemons(page, offset)
 
             res.status(200).send(result)
 
