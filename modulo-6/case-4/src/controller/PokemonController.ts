@@ -1,12 +1,21 @@
 import { Request, Response } from "express"
 import PokemonBusiness from "../business/PokemonBusiness"
+import { CustomError } from "../error/CustomError"
 
 export class PokemonsController {
 
-    async getAllPokemons(){
+    async getAllPokemons(req: Request, res: Response){
         try{
+            const result = await PokemonBusiness.getAllPokemons()
+
+            res.status(200).send(result)
 
         }catch(error){
+            if(error instanceof Error){
+                throw new CustomError(500, error.message)
+            }else {
+                throw new CustomError(422, "Error ao encontrar o pokemons")
+            }
 
         }
     }

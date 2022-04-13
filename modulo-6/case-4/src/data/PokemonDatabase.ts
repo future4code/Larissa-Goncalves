@@ -30,15 +30,21 @@ export class PokemonsDatabase extends BaseDatabase{
         )
     }
 
-    async getAllPokemons(){
+    async getAllPokemons(): Promise<Pokemons[] | undefined>{
         try{
+            const result = await BaseDatabase.connection.raw(`
+                SELECT * FROM ${table_name}
+            `) 
+            return result
 
         }catch(error){
-
+            if(error instanceof Error){
+                throw new Error(error.message)
+            }          
         }
     }
 
-    async getPokemonsById(id: number): Promise<Pokemons[]|any>{
+    async getPokemonsById(id: number): Promise<Pokemons |any>{
         try{
             const result = await BaseDatabase.connection.raw(`
                 SELECT * FROM ${table_name} WHERE id = '${id}'
@@ -52,10 +58,10 @@ export class PokemonsDatabase extends BaseDatabase{
         }
     }
 
-    async getPokemonsByFamilyId(family_id: number): Promise<Pokemons[] | any>{
+    async getPokemonsByFamilyId(family_id: number): Promise<Pokemons[] | undefined>{
         try{
             const result = await BaseDatabase.connection.raw(`
-                SELECT * FROM ${table_name} WHERE family_id = '${family_id}'
+                SELECT id, name, pokedex_number, generation, family_id, evolution_stage  FROM ${table_name} WHERE family_id = '${family_id}'
             `)
             return result;
 
@@ -69,7 +75,7 @@ export class PokemonsDatabase extends BaseDatabase{
     async getPokemonsByGeneration(generation: number): Promise<Pokemons[] | any>{
         try{
             const result = await BaseDatabase.connection.raw(`
-             SELECT * FROM ${table_name} WHERE generation = '${generation}'
+             SELECT id, name, generation, family_id FROM ${table_name} WHERE generation = '${generation}'
             `)
 
             return result;

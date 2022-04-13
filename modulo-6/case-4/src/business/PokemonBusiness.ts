@@ -10,9 +10,16 @@ class PokemonsBusiness {
 
     async getAllPokemons(){
         try{
+            const result = await this.pokemonsDatabase.getAllPokemons()
+
+            return result
 
         }catch(error){
-
+            if(error instanceof Error){
+                throw new CustomError(500, error.message)
+            }else {
+                throw new CustomError(422, "Error ao encontrar o pokemon pelo id")
+            }
         }
     }
 

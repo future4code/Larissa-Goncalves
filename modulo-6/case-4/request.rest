@@ -7,7 +7,11 @@ GET http://localhost:3005/pokemon/family/18
 
 ###
 
-GET http://localhost:3005/pokemon/generation/4
+GET http://localhost:3005/pokemon/generation/2
 
+
+###
+
+GET http://localhost:3005/pokemon/all
 
 ###
