@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import PokemonBusiness from "../business/PokemonBusiness"
+import PokemonBusiness from "../business/PokemonsBusiness"
 import { CustomError } from "../error/CustomError"
 
 export class PokemonsController {

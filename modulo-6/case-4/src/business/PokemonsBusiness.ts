@@ -1,8 +1,8 @@
-import { PokemonsDatabase } from './../data/PokemonDatabase';
-import { CustomError } from './../error/CustomError';
+import { PokemonsDatabase } from '../data/PokemonDatabase';
+import { CustomError } from '../error/CustomError';
 
 
-class PokemonsBusiness {
+export class PokemonsBusiness {
 
     constructor(
         private pokemonsDatabase: PokemonsDatabase

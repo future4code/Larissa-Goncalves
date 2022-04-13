@@ -101,11 +101,20 @@ export class Pokemons {
 
 } 
 
+
+
 export type PokemonsGeneration = {
+    id: number
     name: string,
     generation: number,
-    type_1 : string,
-    type_2 : string,
-    weather_1: string,
-    weather_2: string,
+    family_id: number
+}
+
+export type PokemonsByIdFamily = {
+    id: number,
+    name: string,
+    pokedex_number: number,
+    generation : number,
+    family_id : number,
+    evolution_stage: number,
 }
