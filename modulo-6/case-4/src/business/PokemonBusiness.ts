@@ -74,11 +74,22 @@ class PokemonsBusiness {
         }
     }
 
-    async getPokemonsByGeneration(){
+    async getPokemonsByGeneration(generation: number){
         try{
+            if(!generation && generation > 7){
+                throw new CustomError(422, "geração invalida so tem 7")
+            }
+
+            const result = await this.pokemonsDatabase.getPokemonsByGeneration(generation)
+
+            return result
 
         }catch(error){
-
+            if(error instanceof Error){
+                throw new CustomError(500, error.message)
+            }else {
+                throw new CustomError(422, "Error ao encontrar geração de pokemons")
+            }
         }
     }
 

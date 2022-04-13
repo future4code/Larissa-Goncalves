@@ -38,7 +38,7 @@ export class PokemonsDatabase extends BaseDatabase{
         }
     }
 
-    async getPokemonsById(id: number): Promise<Pokemons|any>{
+    async getPokemonsById(id: number): Promise<Pokemons[]|any>{
         try{
             const result = await BaseDatabase.connection.raw(`
                 SELECT * FROM ${table_name} WHERE id = '${id}'
@@ -52,12 +52,12 @@ export class PokemonsDatabase extends BaseDatabase{
         }
     }
 
-    async getPokemonsByFamilyId(family_id: number){
+    async getPokemonsByFamilyId(family_id: number): Promise<Pokemons[] | any>{
         try{
             const result = await BaseDatabase.connection.raw(`
-                SELECT * FROM ${table_name} WHERE id = '${family_id}'
+                SELECT * FROM ${table_name} WHERE family_id = '${family_id}'
             `)
-            return this.toModel(result[0][0]);
+            return result;
 
         }catch(error){
             if(error instanceof Error){
@@ -66,11 +66,18 @@ export class PokemonsDatabase extends BaseDatabase{
         }
     }
 
-    async getPokemonsByGeneration(){
+    async getPokemonsByGeneration(generation: number): Promise<Pokemons[] | any>{
         try{
+            const result = await BaseDatabase.connection.raw(`
+             SELECT * FROM ${table_name} WHERE generation = '${generation}'
+            `)
+
+            return result;
 
         }catch(error){
-
+            if(error instanceof Error){
+                throw new Error(error.message)
+            }
         }
     }
 
