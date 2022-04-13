@@ -8,7 +8,7 @@ class PokemonsBusiness {
         private pokemonsDatabase: PokemonsDatabase
     ){}
 
-    async getAllPokemons(page: number| string, offset: number | string){
+    async getAllPokemons(page: number, offset: number){
         try{
            
             const pagination = (async (page: Number | any, offset: Number | any) => {
@@ -32,7 +32,7 @@ class PokemonsBusiness {
             if(error instanceof Error){
                 throw new CustomError(500, error.message)
             }else {
-                throw new CustomError(422, "Error ao encontrar o pokemon pelo id")
+                throw new CustomError(422, "Error ao encontrar o pokemons")
             }
         }
     }
@@ -97,8 +97,8 @@ class PokemonsBusiness {
 
     async getPokemonsByGeneration(generation: number){
         try{
-            if(!generation && generation > 7){
-                throw new CustomError(422, "geração invalida so tem 7")
+            if(!generation){
+                throw new CustomError(422, "geração invalida ")
             }
 
             const result = await this.pokemonsDatabase.getPokemonsByGeneration(generation)
