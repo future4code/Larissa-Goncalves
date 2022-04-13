@@ -96,7 +96,22 @@ export class PokemonsDatabase extends BaseDatabase{
              `)
 
              return result
-             
+
+        }catch(error){
+            if(error instanceof Error){
+                throw new Error(error.message)
+            }
+        }
+    }
+
+    async getPokemonsByName(name: string): Promise<Pokemons[] | any>{
+        try{
+            const result = await BaseDatabase.connection.raw(`
+                SELECT * FROM ${table_name} WHERE name = '${name}'
+            `)
+
+            return this.toModel(result[0][0]);
+
         }catch(error){
             if(error instanceof Error){
                 throw new Error(error.message)

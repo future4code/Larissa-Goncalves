@@ -128,6 +128,34 @@ class PokemonsBusiness {
         }
     }
 
+    async getPokemonByName(name: string){
+        try{
+            if(!name){
+                throw new CustomError(403, "Passe o nome do pokemon")
+             }
+ 
+             const pokeName = (async () => {
+                 const data = await this.pokemonsDatabase.getPokemonsByName(name)
+                 return data
+             })
+ 
+             const dataPokeName = await pokeName()
+ 
+             if(!dataPokeName){
+                 throw new CustomError(422, "Pokemon não encontrado")
+             }
+ 
+             return dataPokeName
+
+        }catch(error){
+            if(error instanceof Error){
+                throw new CustomError(500, error.message)
+            }else {
+                throw new CustomError(422, "Error ao encontrar pokemons pelo nome")
+            }
+        }
+    }
+
 
 
 }
