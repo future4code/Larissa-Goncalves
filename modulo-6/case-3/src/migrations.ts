@@ -1,23 +1,10 @@
-import dotenv from 'dotenv';
-import knex from "knex";
-import { table_name } from './data/BaseData';
+import BaseDataBase, { table_name } from './data/BaseData';
 
+class Migrations extends BaseDataBase{
 
-dotenv.config();
+    tables = async () => {
 
-export const connection = knex({
-    client: 'mysql',
-    connection: {
-        host: process.env.DB_HOST,
-          user: process.env.DB_USER,
-          password: process.env.DB_PASSWORD,
-          database: process.env.DB_SCHEMA,
-          port: 3306,
-          multipleStatements: true,
-    },
-});
-
-    connection.raw(`
+        await BaseDataBase.connection.raw(`
         CREATE TABLE IF NOT EXISTS ${table_name}(
             id VARCHAR(255) PRIMARY KEY,
             date DATE NOT NULL,
@@ -30,11 +17,18 @@ export const connection = knex({
         );  
 
         
-    `).then(() => console.log(
-        'Tabelas criadas com sucesso!'
-    )).catch(error => 
-        console.log('Algo deu errado', error.message)
-        ).finally(() => {
-            connection.destroy()
-        })
+        `).then(() => console.log(
+            'Tabelas criadas com sucesso!'
+        )).catch(error => 
+            console.log('Algo deu errado', error.message)
+            ).finally(() => {
+                Migrations.connection.destroy()
+            })
+    
+    }
+
+}
+
+const migrations = new Migrations()
+migrations.tables()
 

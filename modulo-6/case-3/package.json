@@ -7,9 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "clear && echo \"Running tests...\" && jest",
-    "jest": "jest",
-    "start": "tsc & node ./build/index.js",
+    "start": "tsc & node build/index.js",
     "build": "tsc",
     "dev": "tsnd src/index.ts",
     "migrations": "tsnd src/migrations.ts"
@@ -34,6 +32,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "heroku": "^7.60.1",
     "jest": "^27.5.1",
     "jsonwebtoken": "^8.5.1",
     "knex": "^1.0.4",

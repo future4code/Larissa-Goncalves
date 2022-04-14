@@ -57,4 +57,32 @@ export class DogDatabase extends BaseDataBase {
         }
     }
     }
+
+    async getAllWalks(): Promise<DogWalking[] | any>{
+        try{
+            const result = await BaseDataBase.connection.raw(`
+                SELECT * FROM ${table_name}
+            `)
+            return result[0]
+
+        }catch(error){
+            if(error instanceof Error){
+                throw new Error(error.message)
+            }
+        }
+    }
+
+    async pages(page: number | any, offset: number | any): Promise<void | any>{
+        try{
+            const result = await BaseDataBase.connection.raw(`
+                SELECT * FROM ${table_name} LIMIT ${page - 1}, ${offset}
+            `)
+            return result[0]
+
+        }catch(error){
+            if(error instanceof Error){
+                throw new Error(error.message)
+            }
+        }
+    }
 }

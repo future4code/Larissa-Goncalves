@@ -13,7 +13,7 @@ class DogBusiness {
     ){
         
     }
-
+    
  async createWalk(input : DogDTO) {
 
         try{
@@ -106,6 +106,35 @@ class DogBusiness {
                 throw new errorCustom(400, "Erro encontrar passeio pelo id")
              }
     
+        }
+    }
+
+    async getAllWalks(page: number, offset: number){
+        try{
+
+            const pagination = (async (page: Number | any, offset: Number | any) => {
+                if(page === 0){
+                    throw new errorCustom(400, "Página 0 não existe")
+                }else if (!page && !offset){
+                    throw new errorCustom(400, "Preencha corretamente todos os dados da paginação")
+                }else if (page && offset){
+                    const result = await this.dogDatabase.pages(page, offset)
+                    return result
+                }else{
+                    const result = await this.dogDatabase.getAllWalks()
+                    return result
+                }
+
+            })
+            
+            return pagination(page, offset);
+
+        }catch(error){
+            if (error instanceof Error) {
+                throw new errorCustom(400, error.message)
+             } else {
+                throw new errorCustom(400, "Erro encontrar passeios")
+             }
         }
     }
 

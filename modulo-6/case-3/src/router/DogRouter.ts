@@ -9,3 +9,4 @@ const dogController = new DogController();
 DogRouter.post('/createWalk', dogController.createWalk);
 
 DogRouter.get('/:id', dogController.getWalkById)
+DogRouter.get('/all/:page/:offset', dogController.getAllWalks)
